@@ -384,13 +384,16 @@ p.parrafoEstadio{
 } */
 
 @media (max-width: 768px) {
-  .navbar-nav .nav-link {
-    padding: 12px 0;
-    font-size: 1.2rem;
-  }
-  form.d-flex{
-    padding-bottom: 2rem;
-  }
+    @media (min-width: 577px) {
+        
+        .navbar-nav .nav-link {
+            padding: 12px 0;
+            font-size: 1.2rem;
+        }
+        form.d-flex{
+            padding-bottom: 2rem;
+        }
+    }
 }
 
 @media (min-width: 769px) {
@@ -402,4 +405,8 @@ p.parrafoEstadio{
     padding-bottom: 2rem;    
   }
 }
-
+@media (max-width: 400px){
+    .TituloJugadores{
+        width: 50%;
+    }
+}
