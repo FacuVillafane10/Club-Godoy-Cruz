@@ -276,25 +276,32 @@ p.parrafoEstadio{
   max-height: 150px; /* lo suficiente para mostrar todo el contenido */
 }
 
+
 h2.Titulo-Jugadores{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;           
+    text-align: center;       
     padding: 30px;
-    width: 60rem;
+    width: 100%;              
+    max-width: 100%;          
+    font-size: 3rem;          
+    margin: 0 auto;           
 }
+
+.Titulo-Jugadores {
+    color:#000000;
+    font-size: 3rem;           
+    background-color: #204970;
+    border-radius: 2rem;
+    border: #000 solid 0.2rem;
+    display: inline-block;     
+    padding: 1rem 2rem;
+}
+
 div.TituloJugadores{
     display: flex;
     justify-content: center;
 }
-.Titulo-Jugadores{
-    color:#000000;
-    font-size: 60px;
-    background-color: #204970;
-    width: 25%;
-    border-radius: 2rem;
-    border: #000 solid 0.2rem;
-}
+
 
 
 main {
@@ -343,6 +350,7 @@ color: #fff;
 }
 main.Jugadores{
     background-image: url(./Fotos/Imagenes/Img-Equipo.jpg);
+    
 }
 
 main.main-contacto{
