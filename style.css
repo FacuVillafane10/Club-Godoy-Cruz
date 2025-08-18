@@ -483,3 +483,9 @@ p.parrafoEstadio{
     
   }
 }
+
+
+@media(min-width:550px){
+   .copa{ width: 500px
+}
+}
