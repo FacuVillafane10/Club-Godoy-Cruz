@@ -46,6 +46,8 @@ h1.EstadioFeliciano:hover{
 .copaDiv{
     display: flex;
     justify-content: center;
+    width: 90%;
+    height: auto;
 }
 
 .parrafoCopa{
@@ -344,7 +346,7 @@ main.Jugadores{
 }
 
 main.main-contacto{
-    height: 900px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -374,14 +376,6 @@ p.parrafoEstadio{
     height: 4.5rem;
 }
 
-/* Opcional */
-/* @media (max-width: 768px) {
-  .navbar-nav .nav-link {
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-  }
-} */
 
 @media (max-width: 768px) {
     @media (min-width: 577px) {
@@ -409,4 +403,75 @@ p.parrafoEstadio{
     .TituloJugadores{
         width: 50%;
     }
+}
+
+@media (max-width: 749px){
+    div.contenedorLogos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 749px){
+    a.iconos{
+        height: 75px;
+        padding: 10px;
+
+    }
+}
+
+@media (min-width: 415px){
+    h1.TituloContacto{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 415px){
+    h1.TituloContacto{
+        font-size: 15px;
+    }
+}
+
+
+
+@media (max-width: 415px){
+    h2.redes{
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 400px) {
+  .Titulo-Jugadores {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100% !important; 
+    
+  }
+}
+
+@media (max-width: 768px) {
+  h5.card-title {
+    font-size: 15px;
+    
+  }
+}
+
+@media (max-width: 768px) {
+  h5.card-text {
+    font-size: 10px;
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .img.copa {
+    width: 100% !important; 
+    
+  }
 }
