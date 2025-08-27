@@ -1,0 +1,103 @@
+
+
+@media (min-width: 415px){
+   
+
+@media (max-width: 415px){
+    
+}
+
+
+
+//@media jugadores
+
+@media (max-width: 400px) {
+  .Titulo-Jugadores {
+    text-align: center !important;
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100% !important; 
+    
+  }
+  h1.TituloContacto{
+        font-size: 15px;
+    }
+    h2.redes{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+  h5.card-title {
+    font-size: 15px;
+    
+  }
+}
+
+@media (max-width: 768px) {
+  h5.card-text {
+    font-size: 10px;
+    
+  }
+}
+
+
+
+//navBar
+
+    @media (min-width: 577px) {
+        
+        .navbar-nav .nav-link {
+            padding: 12px 0;
+            font-size: 1.2rem;
+        }
+        form.d-flex{
+            padding-bottom: 2rem;
+        }
+        .copa{ width: 500px
+        }
+         h1.TituloContacto{
+        font-size: 20px;
+        }
+}
+    }
+
+@media (min-width: 769px) {
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+    font-size: 2.2rem;
+  }
+  form.d-flex{
+    padding-bottom: 2rem;    
+  }
+
+}
+
+//@Media main
+
+
+@media (max-width: 749px){
+    div.contenedorLogos{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .img.copa {
+    width: 100% !important; 
+    
+  }
+   a.iconos{
+        height: 75px;
+        padding: 10px;
+
+   }
+  }
+
+
+
+
+

@@ -1,0 +1,44 @@
+
+
+.main-contacto{
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+.tituloContacto{
+    color: #000;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    color: #096FCC ;
+}
+
+.contenedorLogos{
+    background-color: #096FCC;
+    display: flex;
+    justify-content: space-around;
+    .iconos{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    .imgContactos{
+    width: 50px;
+    height: auto;
+    padding-left: 15px;
+    padding-top:50px ;
+    padding-bottom: 50px;
+}
+}
+}    
+
+}
+
+

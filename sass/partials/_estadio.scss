@@ -1,0 +1,107 @@
+@use "./variables" as *;
+
+
+  nav.navbar {
+    border-bottom: 3px solid #000;
+
+    .container-fluid {
+      background-color: $Tomba;
+    
+
+    .navbar-brand {
+      .logoPrincipal {
+        width: 150px;
+        height: auto;
+      }
+    }
+
+    .nav-item {
+      a.nav-link {
+        text-decoration: none;
+        color: #000;
+        font-size: 2rem; // mejor con rem para consistencia
+
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        background-color: rgb(34, 57, 134);
+        border-radius: 20px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// ---------- MAIN ----------
+main.main-estadio {
+  background-image: url("../../fotos/imagenes/cesped.jpg");
+  padding-top: 7rem;
+
+  h1.EstadioFeliciano {
+    color: #000;
+    font-size: 5rem;
+    padding: 2.5rem;
+
+    &:hover {
+      color: #096FCC;
+      transition: 1.9s;
+    }
+  }
+
+  .SubtituloEstadioFeliciano {
+    color: #000;
+  }
+
+  .inauguacion {
+    display: flex;
+    justify-content: center;
+  }
+
+.bannerEstadio {
+  width: 100%;
+  overflow: hidden; // Evita que elementos internos se desborden
+  display: flex;
+  justify-content: center;
+
+  .img-estadio {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+}
+  .elementor-background-video-embed{
+    display: flex;
+    justify-content: center;
+    align-items: centeR;
+}
+
+}
+
+  .bannerEstadioPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5rem;
+
+    .elementor-background-video-embed {
+      width: 100%;
+      height: 50rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .parrafoEstadio {
+    font-size: 1.5rem;
+    color: #000;
+    background-color: $Tomba;
+    padding: 2rem;
+  }
+}
+
+}

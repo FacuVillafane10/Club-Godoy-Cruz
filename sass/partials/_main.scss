@@ -1,0 +1,53 @@
+
+
+/////main.scss (En realidad es el index.html)
+
+@use './variables' as *;
+
+
+header{
+    .logoPrincipal{
+    width: 150px;
+    height: auto;
+}
+}
+
+main{
+    .nombre-club{
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 3em;        
+    }
+
+    
+    .haceteSocio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: $Tomba;
+}
+    .copaDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: auto;
+    img.copa{
+    width: 60%;
+    height: auto;
+}
+}
+    .parrafoCopa{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+}
+}
+
+

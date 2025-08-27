@@ -1,0 +1,50 @@
+@use './variables' as *;
+
+
+*{
+    margin: 0;    
+    box-sizing: border-box;
+  font-family: "Allerta Stencil", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Header
+
+
+
+.container-fluid {
+  background-color: #fff;
+}
+
+
+// Footer
+.footerEscudo {
+  padding-top: 100px;
+
+  .logo-footer {
+    display: flex;
+    padding: 10px;
+    background-color: $Tomba;
+    border-top: #000 solid 3px;
+    justify-content: center;
+    background-size: 1200px;
+    align-items: center;
+    height: 4.5rem;
+  }
+
+  .nombres-footer {
+    display: flex;
+    padding: 10px;
+    background-color: $Tomba;
+    justify-content: flex-end;
+    background-size: 600px;
+    align-items: center;
+    height: 120px;
+    
+.balcarce {
+    color: #000
+}
+
+  }
+}
