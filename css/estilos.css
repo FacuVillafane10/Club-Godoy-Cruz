@@ -96,8 +96,6 @@ main .nombre-club {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-main h1 {
   display: flex;
   justify-content: center;
   font-size: 3em;
@@ -220,12 +218,17 @@ main .parrafoCopa {
     flex-direction: column;
     justify-content: space-between;
   }
-  .img.copa {
-    width: 100% !important;
+  img.copa {
+    width: 100%;
   }
   a.iconos {
     height: 75px;
     padding: 10px;
+  }
+}
+@media (min-width: 576px) {
+  header.logoPrincipal {
+    width: 10px;
   }
 }
 

@@ -63,6 +63,7 @@
          h1.TituloContacto{
         font-size: 20px;
         }
+        
 }
     }
 
@@ -74,7 +75,7 @@
   form.d-flex{
     padding-bottom: 2rem;    
   }
-
+  
 }
 
 //@Media main
@@ -86,8 +87,8 @@
         flex-direction: column;
         justify-content: space-between;
     }
-    .img.copa {
-    width: 100% !important; 
+    img.copa {
+    width: 100%; 
     
   }
    a.iconos{
@@ -99,5 +100,13 @@
 
 
 
+@media (min-width: 500px){
+  
 
+}
 
+@media (min-width: 576px) { 
+  header.logoPrincipal{
+          width: 10px;
+        }
+ }
