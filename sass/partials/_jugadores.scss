@@ -2,13 +2,10 @@
 @use './variables' as *;
 
 .Jugadores{
+  
+
     background-image: url(./Fotos/Imagenes/Img-Equipo.jpg);    
-    .card-img-top {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  height: 40rem;
-  object-fit: cover;
-}
+   
     .Titulo-Jugadores{
     display: block;           
     text-align: center;       
@@ -25,6 +22,8 @@
     display: inline-block;     
     padding: 1rem 2rem;        
     }
+   
+     
     .card-title{
     font-size: 50px;
     font-family: 'Allerta Stencil', sans-serif;
@@ -38,6 +37,8 @@
     color: #000000;
 }
 
+
+
     .info-extra {
   max-height: 0;
   overflow: hidden;
@@ -45,6 +46,13 @@
   font-size: 2.2rem;
   color: #000000;
 }
+ 
+}
+
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 50%;
 }
 
 //Header
