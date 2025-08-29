@@ -96,15 +96,12 @@ main .nombre-club {
   justify-content: center;
   align-items: center;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 3em;
 }
 main .haceteSocio {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 4em;
   color: #0d6efd;
 }
 main .copaDiv {
@@ -129,6 +126,11 @@ main .parrafoCopa {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+.main-contacto h1.tituloContacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .main-contacto .tituloContacto {
   color: #000;
@@ -226,9 +228,36 @@ main .parrafoCopa {
     padding: 10px;
   }
 }
+@media (max-width: 566px) {
+  main {
+    width: 100%;
+    height: auto;
+  }
+  h1.nombre-club {
+    font-size: 30px;
+  }
+  h2.haceteSocio {
+    font-size: 25px;
+    color: #0d6efd;
+  }
+  img.copa {
+    height: 100%;
+  }
+  h1.contacto {
+    font-size: 50px;
+  }
+  h2.redes {
+    font-size: 20px;
+  }
+}
 @media (min-width: 576px) {
   header.logoPrincipal {
     width: 10px;
+  }
+}
+@media (min-width: 576px) {
+  .copaDiv {
+    height: 90px;
   }
 }
 

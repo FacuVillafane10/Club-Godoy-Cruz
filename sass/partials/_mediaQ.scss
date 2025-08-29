@@ -1,5 +1,8 @@
 
 
+
+@use './variables' as *;
+
 @media (min-width: 415px){
    
 
@@ -100,13 +103,38 @@
 
 
 
-@media (min-width: 500px){
-  
-
+@media (max-width: 566px){
+  main{
+    width: 100%;
+    height: auto;
+  }
+  h1.nombre-club{
+    font-size: 30px;
+  }
+    h2.haceteSocio{
+      font-size: 25px;
+      color: $Tomba;
+    }
+    
+    img.copa{
+      height: 100%;
+    }
+    h1.contacto{
+      font-size: 50px;
+    }
+    h2.redes{
+      font-size: 20px;
+    }
 }
 
 @media (min-width: 576px) { 
   header.logoPrincipal{
           width: 10px;
+        }
+ }
+
+ @media (min-width: 576px) { 
+  .copaDiv{
+          height: 90px;
         }
  }
