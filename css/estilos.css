@@ -97,6 +97,7 @@ main .titlesTomba h1.nombre-club {
   background-position: center;
   color: #000;
   font-size: 30px;
+  padding-top: 25px;
 }
 main .titlesTomba .haceteSocio {
   display: flex;
@@ -104,6 +105,7 @@ main .titlesTomba .haceteSocio {
   align-items: center;
   font-size: 25px;
   color: #0d6efd;
+  padding-bottom: 25px;
 }
 main .copaDiv {
   display: flex;
@@ -140,9 +142,12 @@ main p {
   padding: 0px 65px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 528px) {
   header img.logoPrincipal {
     width: 110px;
+  }
+  main .titlesTomba .haceteSocio {
+    font-size: 18px;
   }
 }
 body {

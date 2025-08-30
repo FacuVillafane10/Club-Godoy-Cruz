@@ -28,6 +28,7 @@ main{
         background-position: center;
         color: #000;
         font-size: 30px;
+        padding-top: 25px;
     }
 
     
@@ -37,6 +38,7 @@ main{
     align-items: center;
     font-size: 25px;
     color: $Tomba;
+    padding-bottom: 25px;
     }
 }
     .copaDiv{
@@ -79,8 +81,11 @@ main{
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 528px) {
     header img.logoPrincipal{
         width: 110px;
+    }
+    main .titlesTomba .haceteSocio{
+        font-size: 18px;
     }
 }
