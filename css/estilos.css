@@ -51,6 +51,31 @@ header img.logoPrincipal {
   height: auto;
 }
 
+@media (min-width: 765px) {
+  .card-img, .card-img-top {
+    width: 55rem;
+  }
+}
+.carousel .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+.carousel .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: rgb(0, 0, 0);
+}
+.carousel .card:hover .info-extra {
+  max-height: 200px;
+  color: rgb(0, 0, 0);
+}
+.carousel .card .info-extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
 header .logoPrincipal {
   width: 150px;
   height: auto;
@@ -98,53 +123,115 @@ main p.parrafoCopa {
   padding-left: 15%;
 }
 
-.main-contacto {
-  height: 550px;
+body {
+  background-color: #ffffff;
+}
+body main .main-contacto {
+  height: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-}
-.main-contacto h1.tituloContacto {
-  display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 }
-.main-contacto .tituloContacto {
+body main .main-contacto .tituloContacto {
   color: #000;
 }
-.main-contacto h2.redes {
+body main .main-contacto h2.redes {
   display: flex;
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 100px;
-  color: #096FCC;
+  color: #000000;
   font-size: 1.8rem;
 }
-.main-contacto .contenedorLogos {
-  background-color: #096FCC;
-  display: flex;
-  justify-content: space-around;
-}
-.main-contacto .contenedorLogos .iconos {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
+body main .contenedorTextos ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-right: 5px;
+  padding: px 45px;
+  padding-bottom: 20px;
 }
-.main-contacto .contenedorLogos .iconos .imgContactos {
-  width: 50px;
-  height: auto;
-  padding-left: 15px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+body main .contenedorTextos ul li {
+  color: #000000;
+  padding: 2px 35px;
+  font-size: 1.8rem;
+}
+body main .contenedorTextos .txt {
+  padding: 0px 10px;
+  padding-bottom: 100px;
+  color: #000000;
+}
+body main .contenedorLogos {
+  display: flex;
+  flex-direction: column;
+}
+body main .contenedorLogos ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .contenedorLogos ul li a.iconos {
+  color: #fff;
+  text-decoration: none;
+  padding: 0px 45px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .contenedorLogos ul li .fa-facebook {
+  color: #0d6efd;
+  font-size: 50px;
+}
+body main .contenedorLogos ul li .fa-bus {
+  color: rgb(161, 48, 48);
+  font-size: 50px;
+}
+body main .contenedorLogos ul li .fa-whatsapp {
+  color: #25D366;
+  font-size: 50px;
+}
+body main .contenedorLogos ul li .fa-envelope {
+  color: #FBBC04;
+  font-size: 50px;
+}
+body main .contenedorLogos ul li .fa-instagram {
+  color: #833AB4;
+  font-size: 50px;
+}
+body main .contenedorLogos .derechos {
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
 }
 
-@media (min-width: 415px) and (max-width: 400px) {
-  .Titulo-Jugadores {
-    text-align: center !important;
-    width: 30%;
+@media (max-width: 685px) {
+  body main .main-contacto .tituloContacto {
+    font-size: 18px;
+    color: #0d6efd;
+  }
+  body main .main-contacto h2.redes {
+    font-size: 17px;
+    color: #0d6efd;
+  }
+  body main .contenedorLogos ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+  }
+  body main .contenedorTextos ul {
+    list-style: none;
+    padding: px 45px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
   }
 }
 @media (min-width: 415px) and (max-width: 768px) {
@@ -251,6 +338,12 @@ main p.parrafoCopa {
 @media (min-width: 361px) {
   h1.nombre-club {
     font-size: 2px;
+  }
+}
+@media (max-width: 665px) {
+  .contenedorLogos {
+    display: flex;
+    flex-direction: column;
   }
 }
 

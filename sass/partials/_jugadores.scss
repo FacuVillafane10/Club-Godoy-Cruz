@@ -7,3 +7,38 @@ header {
           height: auto;
         }
 }
+
+
+
+@media (min-width: 765px){
+    .card-img, .card-img-top{
+      width: 55rem;
+    }
+}
+
+.carousel {
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden; // para que no se salga nada de la card
+    
+      
+    &:hover {
+      transform: scale(1.05); // agranda la carta
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); // le da sombra
+      color: rgb(0, 0, 0);
+
+      .info-extra {
+        max-height: 200px; // ajusta según el contenido
+        color: rgb(0, 0, 0);
+        
+      }
+    }
+
+    .info-extra {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+  }
+}

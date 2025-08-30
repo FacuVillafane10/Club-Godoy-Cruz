@@ -7,12 +7,7 @@
    
 
 
-@media (max-width: 400px) {
-  .Titulo-Jugadores {
-    text-align: center !important;
-    width: 30%;
-  }
-}
+
 
 @media (max-width: 768px) {
   .card {
@@ -148,3 +143,10 @@
     font-size: 2px;
   }
  }
+
+ @media (max-width: 665px) {
+  .contenedorLogos{
+    display: flex ;
+    flex-direction: column;
+ }
+}
