@@ -142,7 +142,7 @@ main p {
   padding: 0px 65px;
 }
 
-@media (max-width: 528px) {
+@media (max-width: 575px) {
   header img.logoPrincipal {
     width: 110px;
   }
