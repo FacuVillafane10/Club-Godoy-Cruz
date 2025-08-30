@@ -1,29 +1,23 @@
 @use './variables' as *;
 
-
 *{
-    margin: 0;    
-    box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
   font-family: "Allerta Stencil", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-// Header
-
-
-
-.container-fluid {
-  background-color: #fff;
+html{
+  font-size: 64.5%;
 }
 
 
 
-// Footer
-.footerEscudo {
+.footerEscudo{
   padding-top: 100px;
 
-  .logo-footer {
+  .logo-footer{
     display: flex;
     padding: 10px;
     background-color: $Tomba;
@@ -31,22 +25,35 @@
     justify-content: center;
     background-size: 1200px;
     align-items: center;
-    height: 4.5rem;
+    width: 100%;
+    height: 35px;
+    background-color: $Tomba;
+
+    .logo-footer2{
+      a{
+        img.logoFooter{
+          height: 5.5rem;
+          width: auto;
+        }
+      }
+    }
   }
 
-  .nombres-footer {
+  .nombres-footer{
     display: flex;
     padding: 10px;
     background-color: $Tomba;
     justify-content: flex-end;
     background-size: 600px;
     align-items: center;
-    height: 120px;
-    
-.balcarce {
-    color: #000
-}
+    height: 180px;
 
+    .balcarce{
+      color: #000;
+    }
   }
 }
 
+a.navInicio:hover{
+  color: #fff;
+}
