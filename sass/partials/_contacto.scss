@@ -1,8 +1,9 @@
 
 @use './variables' as *;
-
+html{
 body{
     background-color: #ffffff;    
+    
     main{
         
 .main-contacto{
@@ -11,7 +12,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    padding: 100px 0px 0px 0px;
     
 .tituloContacto{
     color: #000;
@@ -78,15 +79,15 @@ h2.redes{
         font-size: 50px;
     }
     .fa-whatsapp{
-        color: #25D366 ;
+        color: #0e8339 ;
         font-size: 50px;
     }
     .fa-envelope{
-        color: #FBBC04   ;
+        color: #da0b0b   ;
         font-size: 50px;
     }
     .fa-instagram{
-        color: #833AB4;
+        color: #ad0cad;
         font-size: 50px;
     }
 }    
@@ -105,7 +106,7 @@ h2.redes{
 
 } //main
 } //body
-
+} //html
   
 @media (max-width: 685px){
     body main .main-contacto .tituloContacto{
