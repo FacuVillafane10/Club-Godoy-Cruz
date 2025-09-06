@@ -1,58 +1,215 @@
-
 @use './variables' as *;
 
 header {  
-        img.logoPrincipal {
-          width: 150px;
-          height: auto;
-        }
+  img.logoPrincipal {
+    width: 150px;
+    height: auto;
+  }
 }
 
-
-main{
-
-  h1.tituloPlantel{
+main {
+  h1.tituloPlantel {
     font-size: 40px;
     color: $Tomba;
   }
 
-   .titulo-jugadores{
-    font-size: 40px;;
+  .titulo-jugadores {
+    font-size: 40px;
   }
 
-.carousel {
-  .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    overflow: hidden; // para que no se salga nada de la card
-    
+  // Estilos existentes del carousel
+  .carousel {
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      overflow: hidden; // para que no se salga nada de la card
       
-    &:hover {
-      transform: scale(1.05); // agranda la carta
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); // le da sombra
-      color: rgb(0, 0, 0);
+      &:hover {
+        transform: scale(1.05); // agranda la carta
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); // le da sombra
+        color: rgb(0, 0, 0);
+
+        .info-extra {
+          max-height: 200px; // ajusta según el contenido
+          color: rgb(0, 0, 0);
+        }
+      }
 
       .info-extra {
-        max-height: 200px; // ajusta según el contenido
-        color: rgb(0, 0, 0);
-        
+        max-height: auto;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      // Tamaño fijo para imágenes del carousel
+      .card-img-top {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center top;
       }
     }
+  }
 
-    .info-extra {
-      max-height: auto;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+  // Nuevos estilos para las cards del plantel completo
+  .player-card {
+    transition: all 0.3s ease;
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba($Tomba, 0.2);
+    }
+
+    .card-img-top {
+      height: 280px !important;
+      width: 100% !important;
+      object-fit: cover !important;
+      object-position: center top !important;
+      position: relative;
+    }
+
+    .card-body {
+      background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+      padding: 1.5rem;
+
+      .card-title {
+        color: $Tomba;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+
+  // Estilos para los números de camiseta
+  .player-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, $Tomba, darken($Tomba, 10%));
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  // Estilos para los badges de posición
+  .position-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &.position-arquero { 
+      background: #28a745; 
+      color: white; 
+    }
+    &.position-defensor { 
+      background: #17a2b8; 
+      color: white; 
+    }
+    &.position-mediocampista { 
+      background: #ffc107; 
+      color: #212529; 
+    }
+    &.position-delantero { 
+      background: #dc3545; 
+      color: white; 
+    }
+  }
+
+  // Estilos para las estadísticas del jugador
+  .player-stats {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+
+  // Sección de filtros
+  .filter-section {
+    background: linear-gradient(135deg, $Tomba, darken($Tomba, 10%));
+    padding: 2rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .filter-btn {
+    margin: 0.25rem;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: white;
+      color: $Tomba;
+      transform: scale(1.05);
+    }
+  }
+
+  // Divisor entre secciones
+  .section-divider {
+    background: linear-gradient(90deg, transparent, $Tomba, transparent);
+    height: 3px;
+    margin: 3rem 0;
+  }
+}
+
+// Media queries
+@media (min-width: 765px) {
+  // Carousel - tu estilo original exacto
+  .card-img, .card-img-top {
+    width: 55rem;
+  }
+  
+  // Solo las cards del grid mantienen su tamaño fijo
+  .player-item .card-img-top {
+    height: 280px !important;
+    width: 100% !important;
+  }
+}
+
+// Media queries adicionales para mejor responsive
+@media (max-width: 576px) {
+  main {
+    h1.tituloPlantel {
+      font-size: 30px;
+    }
+
+    .titulo-jugadores {
+      font-size: 30px;
+    }
+
+    .player-card .card-img-top {
+      height: 250px !important;
+    }
+
+    .filter-btn {
+      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
     }
   }
 }
 
+@media (max-width: 768px) {
+  .player-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
 
-}
-
-
-@media (min-width: 765px){
-    .card-img, .card-img-top{
-      width: 55rem;
-    }
+  .position-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
 }

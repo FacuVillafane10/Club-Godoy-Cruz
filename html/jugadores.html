@@ -58,7 +58,7 @@
               <h1 class="container text-center pt-5 tituloPlantel">PLANTEL PROFESIONAL</h1>
               
                 <img src="../fotos/imagenes/plantel-profesional.webp" alt="Plantel Profesional" class="container d-flex justify-content-center ">
-              
+          <!--       
             <h2 class="titulo-jugadores text-center text-primary p-5">NUESTRAS FIGURAS</h2>
         
         <div id="jugadoresCarrusel" class="carousel slide container my-5" data-bs-ride="carousel">
@@ -135,7 +135,194 @@
     <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
     <span class="visually-hidden">Siguiente</span>
   </button>
-</div>
+</div> -->
+
+    <!-- Divisor -->
+        <div class="section-divider"></div>
+
+        <!-- Nueva sección: Plantel completo -->
+        <div class="container">
+            <h2 class="text-center mb-4" style="color: var(--tomba-blue); font-size: 2.5rem;">
+                <i class="fa-solid fa-users me-3"></i>PLANTEL COMPLETO
+            </h2>
+
+            <!-- Filtros -->
+            <div class="filter-section">
+                <div class="container text-center">
+                    <h4 class="text-white mb-3">Filtrar por posición</h4>
+                    <button class="btn btn-outline-light filter-btn active" onclick="filterPlayers('all')">
+                        <i class="fa-solid fa-users me-1"></i>Todos
+                    </button>
+                    <button class="btn btn-outline-light filter-btn" onclick="filterPlayers('Arquero')">
+                        <i class="fa-solid fa-shield me-1"></i>Arqueros
+                    </button>
+                    <button class="btn btn-outline-light filter-btn" onclick="filterPlayers('Defensor')">
+                        <i class="fa-solid fa-user-shield me-1"></i>Defensores
+                    </button>
+                    <button class="btn btn-outline-light filter-btn" onclick="filterPlayers('Mediocampista')">
+                        <i class="fa-solid fa-running me-1"></i>Mediocampistas
+                    </button>
+                    <button class="btn btn-outline-light filter-btn" onclick="filterPlayers('Delantero')">
+                        <i class="fa-solid fa-futbol me-1"></i>Delanteros
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de jugadores -->
+            <div class="row g-4" id="playersGrid">
+                <!-- Arqueros -->
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Arquero">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/franco-petroli.jpeg" class="card-img-top" alt="Franco Petroli">
+                            <div class="player-number">1</div>
+                            <span class="position-badge position-arquero">Arquero</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Franco Petroli</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>27 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.88 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Arquero">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/claa.jpg" class="card-img-top" alt="Arquero 2">
+                            <div class="player-number">17</div>
+                            <span class="position-badge position-arquero">Arquero</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Nicolás Claa</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>24 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.85 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Defensores -->
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Defensor">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/lucas-arce.jpeg" class="card-img-top" alt="Lucas Arce">
+                            <div class="player-number">4</div>
+                            <span class="position-badge position-defensor">Defensor</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Lucas Arce</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>22 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.79 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Defensor">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/rasmussen.jpeg" class="card-img-top" alt="Defensor 2">
+                            <div class="player-number">23</div>
+                            <span class="position-badge position-defensor">Defensor</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Federico Rassmusen</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>33 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.86 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mediocampistas -->
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Mediocampista">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/pol-fernandez.webp" class="card-img-top" alt="Pol Fernandez">
+                            <div class="player-number">22</div>
+                            <span class="position-badge position-mediocampista">Mediocampista</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Pol Fernández</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>31 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.78 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Mediocampista">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/indio.jpg" class="card-img-top" alt="Mediocampista 2">
+                            <div class="player-number">13</div>
+                            <span class="position-badge position-mediocampista">Mediocampista</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Nicolás Fernandez</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>27 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.80 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Uruguay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delanteros -->
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Delantero">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/santino-andino.webp" class="card-img-top" alt="Santino Andino">
+                            <div class="player-number">27</div>
+                            <span class="position-badge position-delantero">Delantero</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Santino Andino</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>20 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.74 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 player-item" data-position="Delantero">
+                    <div class="card player-card">
+                        <div class="position-relative">
+                            <img src="../fotos/jugadores/agustin-auzmendi.webp" class="card-img-top" alt="Delantero 2">
+                            <div class="player-number">31</div>
+                            <span class="position-badge position-delantero">Delantero</span>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Agustín Auzmendi</h5>
+                            <div class="player-stats">
+                                <p class="mb-1"><i class="fa-solid fa-calendar me-1"></i>28 años</p>
+                                <p class="mb-1"><i class="fa-solid fa-ruler-vertical me-1"></i>1.81 m</p>
+                                <p class="mb-0"><i class="fa-solid fa-flag me-1"></i>Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agrega más jugadores aquí siguiendo el mismo patrón -->
+                <!-- Puedes duplicar estas estructuras cambiando los números, nombres e imágenes -->
+                
+            </div>
+        </div>
 
 </main>
        <footer class="footerEscudo">

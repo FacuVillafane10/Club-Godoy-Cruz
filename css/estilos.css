@@ -80,10 +80,140 @@ main .carousel .card .info-extra {
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
+main .carousel .card .card-img-top {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+main .player-card {
+  transition: all 0.3s ease;
+  height: 100%;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+main .player-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+}
+main .player-card .card-img-top {
+  height: 280px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  position: relative;
+}
+main .player-card .card-body {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  padding: 1.5rem;
+}
+main .player-card .card-body .card-title {
+  color: #0d6efd;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+main .player-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, #0d6efd, rgb(1.762295082, 87.2336065574, 213.237704918));
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+main .position-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+main .position-badge.position-arquero {
+  background: #28a745;
+  color: white;
+}
+main .position-badge.position-defensor {
+  background: #17a2b8;
+  color: white;
+}
+main .position-badge.position-mediocampista {
+  background: #ffc107;
+  color: #212529;
+}
+main .position-badge.position-delantero {
+  background: #dc3545;
+  color: white;
+}
+main .player-stats {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+main .filter-section {
+  background: linear-gradient(135deg, #0d6efd, rgb(1.762295082, 87.2336065574, 213.237704918));
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+main .filter-btn {
+  margin: 0.25rem;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+main .filter-btn.active {
+  background: white;
+  color: #0d6efd;
+  transform: scale(1.05);
+}
+main .section-divider {
+  background: linear-gradient(90deg, transparent, #0d6efd, transparent);
+  height: 3px;
+  margin: 3rem 0;
+}
 
 @media (min-width: 765px) {
   .card-img, .card-img-top {
     width: 55rem;
+  }
+  .player-item .card-img-top {
+    height: 280px !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 576px) {
+  main h1.tituloPlantel {
+    font-size: 30px;
+  }
+  main .titulo-jugadores {
+    font-size: 30px;
+  }
+  main .player-card .card-img-top {
+    height: 250px !important;
+  }
+  main .filter-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .player-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .position-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
   }
 }
 header .logoPrincipal {
