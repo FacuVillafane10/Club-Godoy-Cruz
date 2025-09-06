@@ -9,12 +9,11 @@ header {
 }
 
 
+main{
 
-@media (min-width: 765px){
-    .card-img, .card-img-top{
-      width: 55rem;
-    }
-}
+   .titulo-jugadores{
+    font-size: 4rem;
+  }
 
 .carousel {
   .card {
@@ -41,4 +40,14 @@ header {
       transition: max-height 0.3s ease;
     }
   }
+}
+
+
+}
+
+
+@media (min-width: 765px){
+    .card-img, .card-img-top{
+      width: 55rem;
+    }
 }
