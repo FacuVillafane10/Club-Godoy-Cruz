@@ -95,9 +95,16 @@
                  </a>
               </li>
               <li>
-                  <a href="#" class="iconos" onclick="alert('Aún no contamos con un Gmail vigente');"> 
+
+                    <!-- Vertically centered modal -->
+                    <a href="#" class="iconos btn " data-bs-toggle="modal" data-bs-target="#gmailModal">
+                      <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <!--
+                   <a href="#" class="iconos alert alert-primary" onclick="alert('Aún no contamos con un Gmail vigente');"> 
                     <i class="fa-solid fa-envelope"></i>  
-                   </a>                  
+                   </a> 
+                   -->                                 
               </li>
               <li>
                   <a href="https://www.instagram.com/clubgodoycruzoficial/?hl=es" target="_blank" class="iconos" >
@@ -131,6 +138,28 @@
         </h3>
       </div>
     </footer>  
+    <!-- MODAL - La ventana que aparece al hacer clic -->
+      <div class="modal fade" id="gmailModal" tabindex="-1" aria-labelledby="gmailModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="gmailModalLabel">
+                          <i class="fa-solid fa-envelope me-2"></i>Gmail
+                      </h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="alert alert-primary" role="alert">
+                          <i class="fa-solid fa-info-circle me-2"></i>
+                          Aún no contamos con un Gmail vigente.
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                  </div>
+              </div>
+          </div>
+      </div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
  <script src="https://kit.fontawesome.com/404b2a9cfb.js" crossorigin="anonymous"></script>
 </body>
