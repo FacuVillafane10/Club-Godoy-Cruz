@@ -5,6 +5,15 @@
 @use './variables' as *;
 
 
+   // Mixin para Flexbox
+@mixin flexbox($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+
 header{
     .logoPrincipal{
     width: 150px;
@@ -19,10 +28,8 @@ main{
     flex-direction: column;
     
     h1.nombre-club{
-        color: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        color: #000;   
+        @include flexbox(center, center);
         width: 100%;      
         background-size: cover;
         background-position: center;
@@ -33,18 +40,14 @@ main{
 
     
     .haceteSocio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox(center, center);
     font-size: 35px;
     color: $Tomba;
     padding-bottom: 25px;
     }
 }
     .copaDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox(center, center);
     width: 100%; 
     height: auto;
 
@@ -55,14 +58,10 @@ main{
 }   
     .h3,h3{
         padding: 20px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexbox(center, center);
     }
     .fotoCampeones{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexbox(center, center);
 
         img.campeonesNacional{
             width: 50%;
@@ -71,9 +70,7 @@ main{
 }
     
     p{
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            
             font-size: 1.5rem;
             color: #000;
             padding: 0px 65px;

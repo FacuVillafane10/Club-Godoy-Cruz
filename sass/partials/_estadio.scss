@@ -1,6 +1,14 @@
 @use "./variables" as *;
 
-main.main-estadio {
+
+          // Mixin para Flexbox
+            @mixin flexbox($justify: center, $align: center) {
+            display: flex;
+            justify-content: $justify;
+            align-items: $align;
+          }
+
+.main-estadio {
   background-image: url("../../fotos/imagenes/cesped.jpg");
   background-size: cover;
   background-position: center;
@@ -8,11 +16,11 @@ main.main-estadio {
   padding-left: 1rem;
   padding-right: 1rem;
 
-  h1.EstadioFeliciano {
+  .estadioFeliciano h1 {
     color: $Tomba;
     font-size: 5rem;
     padding: 2.5rem;
-    text-align: center;
+    @include flexbox(center,center);
 
     &:hover {
       color: #096FCC;
@@ -21,16 +29,15 @@ main.main-estadio {
   }
 
   .inauguacion {
-    display: flex;
-    justify-content: center;
+    @include flexbox(center, center);
     padding-bottom: 1rem;
 
-    h2.SubtituloEstadioFeliciano {
+    .subtituloEstadioFeliciano {
       color: #000;
       max-width: 1200px;
-      text-align: center;
       font-size: 1.6rem;
       line-height: 1.3;
+      @include flexbox(center, center);
     }
   }
 
@@ -45,8 +52,7 @@ main.main-estadio {
   .bannerEstadio {
     width: 100%;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
+    @include flexbox(center, center);
 
     .img-estadio {
       max-width: 100%;
@@ -56,15 +62,11 @@ main.main-estadio {
   }
 
   .elementor-background-video-embed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox(center, center);
   }
 
   .bannerEstadioPrincipal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexbox(center, center);
     padding-top: 2.5rem;
     width: 100%;
 
@@ -72,9 +74,7 @@ main.main-estadio {
       width: 100%;
       max-width: 1400px;
       height: 50rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexbox(center, center);
     }
 
     iframe.elementor-background-video-embed {

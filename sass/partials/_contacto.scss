@@ -1,135 +1,242 @@
-
 @use './variables' as *;
-html{
-body{
-    background-color: #ffffff;    
+
+// Mixin para Flexbox
+@mixin flexbox($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+html {
+  body {
+    background-color: #ffffff;
     
-    main{
+    main {
+      .main-contacto {
+        @include flexbox(center, center);
+        min-height: 250px;
+        flex-direction: column;
+        padding: 100px 0px 0px 0px;
         
-.main-contacto{
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 0px 0px 0px;
-    
-.tituloContacto{
-    color: #000;
-}
-
-h2.redes{
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
-    padding-bottom: 100px;
-    color: #000000 ;
-    font-size: 1.8rem;
-}
-}
-
-.contenedorTextos{
-    
-
-    ul{
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: px 45px;
-        padding-bottom: 20px;
-        li{
+        .tituloContacto {
+          color: #000;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        
+        h2.redes {
+          @include flexbox(center, center);
+          padding-top: 50px;
+          padding-bottom: 100px;
+          color: #000000;
+          font-size: 1.8rem;
+          text-align: center;
+        }
+      }
+      
+      .contenedorTextos {
+        ul {
+          list-style: none;
+          @include flexbox(center, center);
+          flex-wrap: wrap; 
+          padding: 0 45px; 
+          padding-bottom: 20px;
+          gap: 10px; 
+          
+          li {
             color: #000000;
             padding: 2px 35px;
             font-size: 1.8rem;
+            text-align: center;
+            min-width: fit-content; 
+          }
         }
-    }
-    .txt{
-        padding: 0px 10px;
-        padding-bottom: 100px;
-        color: #000000;
-    }
-}
-.contenedorLogos{
-    display: flex;
-    flex-direction: column;
-    
-
-    ul{
-        list-style: none;
+        
+        .txt {
+          padding: 0px 10px;
+          padding-bottom: 100px;
+          color: #000000;
+        }
+      }
+      
+      .contenedorLogos {
         display: flex;
-        justify-content: center;
-        align-items: center;
-    li{
-    a.iconos{
-        color: #fff;
-        text-decoration: none;
-        padding: 0px 45px;
+        flex-direction: column;
+        
+        ul {
+          list-style: none;
+          @include flexbox(center, center);
+          flex-wrap: wrap; 
+          gap: 20px; 
+          
+          li {
+            a.iconos {
+              color: #fff;
+              text-decoration: none;
+              padding: 10px; 
+              font-size: 1.5rem;
+              @include flexbox(center, center);
+              transition: transform 0.3s ease; 
+              
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+            
+            .fa-facebook {
+              color: $Tomba;
+              font-size: 50px;
+            }
+            
+            .fa-bus {
+              color: rgb(161, 48, 48);
+              font-size: 50px;
+            }
+            
+            .fa-whatsapp {
+              color: #0e8339;
+              font-size: 50px;
+            }
+            
+            .fa-envelope {
+              color: #da0b0b;
+              font-size: 50px;
+            }
+            
+            .fa-instagram {
+              color: #ad0cad;
+              font-size: 50px;
+            }
+          }
+        }
+        
+        .derechos {
+          color: #000000;
+          @include flexbox(center, center);
+          padding-top: 20px;
+          text-align: center;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  body main {
+    .main-contacto {
+      padding: 50px 20px 0px 20px;
+      
+      .tituloContacto {
         font-size: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .fa-facebook{
         color: $Tomba;
-        font-size: 50px;
-    } 
-    .fa-bus{
-        color: rgb(161, 48, 48);
-        font-size: 50px;
+      }
+      
+      h2.redes {
+        font-size: 1.3rem;
+        color: $Tomba;
+        padding-top: 30px;
+        padding-bottom: 50px;
+      }
     }
-    .fa-whatsapp{
-        color: #0e8339 ;
-        font-size: 50px;
-    }
-    .fa-envelope{
-        color: #da0b0b   ;
-        font-size: 50px;
-    }
-    .fa-instagram{
-        color: #ad0cad;
-        font-size: 50px;
-    }
-}    
-  
-  
-    }
-      .derechos{
-    color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-}
-} //contenedorLogos
     
+    .contenedorTextos ul {
+      padding: 0 20px;
+      flex-direction: column;
+      gap: 15px;
+      
+      li {
+        font-size: 1.4rem;
+        padding: 5px 20px;
+      }
+    }
+    
+    .contenedorLogos ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 20px;
+      padding: 0 20px;
+      
+      li a.iconos {
+        padding: 15px;
+      }
+      
+      // Hacer íconos más pequeños en tablet
+      .fa-facebook, .fa-bus, .fa-whatsapp, 
+      .fa-envelope, .fa-instagram {
+        font-size: 40px;
+      }
+    }
+  }
+}
 
-} //main
-} //body
-} //html
-  
-@media (max-width: 685px){
-    body main .main-contacto .tituloContacto{
-        font-size: 18px;
-        color: $Tomba;
-    }
-    body main .main-contacto h2.redes{
-        font-size: 17px;
-        color: $Tomba;
-    }
-    body main .contenedorLogos ul{
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 2fr;
-    }
-    body main .contenedorTextos ul{
 
-            list-style: none;    
-            padding: px 45px;
-            padding-bottom: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+@media (max-width: 480px) {
+  body main {
+    .main-contacto {
+      padding: 30px 15px 0px 15px;
+      
+      .tituloContacto {
+        font-size: 1.2rem;
+      }
+      
+      h2.redes {
+        font-size: 1.1rem;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
     }
+    
+    .contenedorTextos ul {
+      padding: 0 10px;
+      
+      li {
+        font-size: 1.1rem;
+        padding: 3px 10px;
+      }
+    }
+    
+    .contenedorLogos ul {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 15px;
+      padding: 0 10px;
+      
+      
+      li:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+      
+      
+      .fa-facebook, .fa-bus, .fa-whatsapp, 
+      .fa-envelope, .fa-instagram {
+        font-size: 35px;
+      }
+    }
+    
+    .derechos {
+      font-size: 0.8rem;
+      padding: 15px 10px;
+    }
+  }
+}
+
+
+@media (max-width: 320px) {
+  body main {
+    .contenedorTextos ul li {
+      font-size: 1rem;
+      padding: 2px 5px;
+    }
+    
+    .contenedorLogos ul {
+      .fa-facebook, .fa-bus, .fa-whatsapp, 
+      .fa-envelope, .fa-instagram {
+        font-size: 30px;
+      }
+    }
+  }
 }
