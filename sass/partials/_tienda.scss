@@ -6,6 +6,11 @@
   justify-content: $justify;
   align-items: $align;
 }
+@mixin separador($gap:20px,$padding:0px 150px,$paddingTop:50px){
+  gap: 20px;
+  padding: 0px 150px;
+  padding-top: 50px;
+}
 
 main {
   .tituloTienda {
@@ -13,7 +18,7 @@ main {
     padding: 40px 20px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #0066cc; // Azul Godoy Cruz
+    color: #0066cc; 
   }
 
   .subtitulo {
@@ -27,21 +32,57 @@ main {
  .contenedorTienda {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 0px 150px;
-  padding-top: 50px;
+ @include separador(20px,0px 150px ,50px);
 
-  // Responsivo para pantallas pequeñas
+  
   @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    @include separador(20px,0px 150px ,50px);
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    @include separador(20px,0px 150px ,50px);
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3,1fr);  
+    display: grid;
+    justify-content: center;  
+ @include separador(20px,0px 150px ,50px);
+  }
+
+  @media (max-width: 582px) {
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    display: grid;
+    justify-content: center;
+ @include separador(20px,0px 150px ,50px);
+ h1.tituloTienda{
+    font-size: 1rem;
+ }
+  }
+
+   @media (max-width: 435px) {
+  grid-template-columns: repeat(2, 1fr);
+  @include separador(20px, 0px 150px, 50px);
+  width: 100%;
+    display: grid;
+    justify-content: center;
+  
+ 
+}
+
+  @media (max-width: 310px) {
+    grid-template-columns: repeat(1,1fr);
+ @include separador(20px,0px 150px ,50px);
+ width: 100%;
+    display: grid;
+    justify-content: center;
+    
+    h1.tituloTienda{
+    font-size: 0.2rem;
+    }  
   }
 
 
