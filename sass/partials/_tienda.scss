@@ -89,6 +89,7 @@ main {
 
   .productos {
     border: #000000 1px solid;
+    
 
       .fotoTienda {
     max-width: 100%;
@@ -109,6 +110,8 @@ main {
 
   .botonAgregar {
     text-align: center;
+    background-color: #0066cc;
+    color: #fff;
   }
 }
 
@@ -119,6 +122,38 @@ main {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+
+    .compraCarrito{
+     position: sticky;
+        bottom: 20px;
+        right: 20px;
+        background-color: #0066cc;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 1000;
+
+        .compraCarrito:hover {
+        background-color: #004d99;
+      }
+    }
   }
 
+
+  .contenedorBotonCantidad{
+    @include flexbox(end, center);
+    padding-right: 20px;
+    padding-top: 20px;
+    position: sticky;
+      .botonCantidad{
+        font-size: 50px;
+        color: #0066cc;   
+      }
+  } 
+  
 }
+
+  

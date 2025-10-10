@@ -726,6 +726,8 @@ main .contenedorTienda .productos .descripcion-precio {
 }
 main .contenedorTienda .botonAgregar {
   text-align: center;
+  background-color: #0066cc;
+  color: #fff;
 }
 main .carrito {
   padding-top: 45px;
@@ -733,6 +735,34 @@ main .carrito {
   justify-content: center;
   align-items: center;
   font-size: 30px;
+}
+main .carrito .compraCarrito {
+  position: sticky;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0066cc;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+main .carrito .compraCarrito .compraCarrito:hover {
+  background-color: #004d99;
+}
+main .contenedorBotonCantidad {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 20px;
+  padding-top: 20px;
+  position: sticky;
+}
+main .contenedorBotonCantidad .botonCantidad {
+  font-size: 50px;
+  color: #0066cc;
 }
 
 /*# sourceMappingURL=estilos.css.map */
