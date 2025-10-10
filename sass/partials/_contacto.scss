@@ -110,13 +110,38 @@ html {
             }
           }
         }
+
+        .formulario{
+          padding: 30px 30px; 
+          background-color: $Tomba;  
+          border-top:#000000 solid 2px;
+          border-bottom:#000000 solid 2px;
+
+          .formularioDentro{
+            width: 65%;
+          }
+
+          .form-label{
+            font-size: 2.8rem;
+          }
+          .form-check-label{
+            font-size: 2rem;
+          }
+          .check{
+            border: solid 1px #000 ;
+          }
+        }
+
+        .contraseña{
+          gap: 10px;
+        }
         
         .derechos {
           color: #000000;
           @include flexbox(center, center);
-          padding-top: 20px;
+          padding-top: 150px;
           text-align: center;
-          font-size: 0.9rem;
+          font-size: 1.9rem;
         }
       }
     }

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      rel="stylesheet"      
       crossorigin="anonymous"
     />
     <link
@@ -30,7 +29,8 @@
     
     <link rel="stylesheet" href="./css/estilos.css">
     
-
+    
+    <!-- <script defer src="./JavaScript/main.js"></script> -->
     <title>Club Deportivo Godoy Cruz Antonio Tomba | Sitio Oficial</title>
   </head>
   <body>
@@ -60,6 +60,9 @@
                         </li>
                         <li class="nav-item fs-3">
                         <a href="html/jugadores.html" class="nav-link text-center w-100 text-black">Jugadores</a>
+                        </li>
+                        <li class="nav-item fs-3">
+                        <a href="html/tienda.html" class="nav-link text-center w-100 text-black">Tienda</a>
                         </li>
                     </ul>
 
@@ -105,7 +108,7 @@
 
                 El 20 de mayo de 2006 se jugó la revancha en el Malvinas Argentinas ante 40.000 personas.
 
-                Esa noche, en un dramático partido, Godoy Cruz venció a Chicago 3-1, con 2 goles de Daniel “Tanque” Giménez y uno de Diego Villar para el Bodeguero; el descuento fue de César Carranza para el Torito de Mataderos.
+                Esa noche, en un dramático partido, Godoy Cruz venció a Chicago 3-1, con 2 goles de Daniel "Tanque" Giménez y uno de Diego Villar para el Bodeguero; el descuento fue de César Carranza para el Torito de Mataderos.
 
                 Así, el Tomba ganó el global 4-2 y logró su primer ascenso a Primera División.
           </p>
@@ -135,10 +138,14 @@
       </div>
     </footer>
 
-    <script
+    <!-- ✅ SOLUCIÓN 1: Bootstrap SIN integrity (más fácil) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    <!-- ✅ SOLUCIÓN 2: Bootstrap CON integrity CORRECTO -->
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-..."
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </body>
 </html>

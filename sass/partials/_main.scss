@@ -93,3 +93,9 @@ main{
         font-size: 14px;
     }
 }
+
+@media (min-width: 1100px) {
+    main .copaDiv img.copa{
+        width: 950px;
+    }
+}

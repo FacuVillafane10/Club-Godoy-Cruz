@@ -119,5 +119,6 @@
         "viajes",
         "Volvimos",
         "Whatsapp"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

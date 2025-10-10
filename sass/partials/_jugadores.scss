@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use 'sass:color';
 
 header {  
   img.logoPrincipal {
@@ -88,7 +89,7 @@ main {
     position: absolute;
     top: 15px;
     left: 15px;
-    background: linear-gradient(135deg, $Tomba, darken($Tomba, 10%));
+    background: linear-gradient(135deg, $Tomba, color.scale($Tomba, $lightness: -10%));
     color: white;
     border-radius: 50%;
     width: 50px;
@@ -138,7 +139,7 @@ main {
 
   // Sección de filtros
   .filter-section {
-    background: linear-gradient(135deg, $Tomba, darken($Tomba, 10%));
+    background: linear-gradient(135deg, $Tomba, color.scale($Tomba, $lightness: -10%));
     padding: 2rem 0;
     margin-bottom: 3rem;
   }
