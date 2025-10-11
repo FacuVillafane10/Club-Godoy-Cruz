@@ -432,11 +432,13 @@ body {
         li a.iconos {
           width: 70px;
           height: 70px;
+          text-decoration: none;
         }
         
         .fa-facebook, .fa-bus, .fa-whatsapp, 
         .fa-envelope, .fa-instagram {
           font-size: 35px;
+          text-decoration: none;
         }
       }
       
@@ -485,12 +487,14 @@ body {
         
         li a.iconos {
           width: 65px;
-          height: 65px;
+          height: 65px;          
+          text-decoration: none;
         }
         
         .fa-facebook, .fa-bus, .fa-whatsapp, 
         .fa-envelope, .fa-instagram {
           font-size: 32px;
+          text-decoration: none;
         }
       }
       
@@ -533,6 +537,7 @@ body {
       li a.iconos {
         width: 60px;
         height: 60px;
+          text-decoration: none;
       }
       
       .fa-facebook, .fa-bus, .fa-whatsapp, 

@@ -40,7 +40,7 @@ html {
   justify-content: center;
   align-items: center;
   background-size: 600px;
-  height: 180px;
+  height: 90px;
 }
 .footerEscudo .nombres-footer .balcarce {
   color: #000;
@@ -402,6 +402,7 @@ footer.footerEscudo .logo-footer .logo-footer2 img.logoFooter {
 }
 footer.footerEscudo .nombres-footer {
   text-align: center;
+  height: 90px;
 }
 footer.footerEscudo .nombres-footer h3.balcarce {
   font-size: clamp(1rem, 2vw, 1.3rem);
@@ -582,6 +583,7 @@ body main .contenedorLogos ul li a.iconos {
   transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 body main .contenedorLogos ul li a.iconos::before {
   content: "";
@@ -593,7 +595,6 @@ body main .contenedorLogos ul li a.iconos::before {
   background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3));
   transform: translateX(-100%);
   transition: transform 0.4s ease-in-out;
-  text-decoration: none;
 }
 body main .contenedorLogos ul li a.iconos:hover {
   transform: translateY(-10px) rotate(5deg);
@@ -828,10 +829,12 @@ body main .contenedorLogos .derechos {
   body main .contenedorLogos ul li a.iconos {
     width: 70px;
     height: 70px;
+    text-decoration: none;
   }
   body main .contenedorLogos ul .fa-facebook, body main .contenedorLogos ul .fa-bus, body main .contenedorLogos ul .fa-whatsapp,
   body main .contenedorLogos ul .fa-envelope, body main .contenedorLogos ul .fa-instagram {
     font-size: 35px;
+    text-decoration: none;
   }
   body main .contenedorLogos .formulario {
     padding: 2rem 1.5rem;
@@ -868,10 +871,12 @@ body main .contenedorLogos .derechos {
   body main .contenedorLogos ul li a.iconos {
     width: 65px;
     height: 65px;
+    text-decoration: none;
   }
   body main .contenedorLogos ul .fa-facebook, body main .contenedorLogos ul .fa-bus, body main .contenedorLogos ul .fa-whatsapp,
   body main .contenedorLogos ul .fa-envelope, body main .contenedorLogos ul .fa-instagram {
     font-size: 32px;
+    text-decoration: none;
   }
   body main .contenedorLogos .formulario {
     padding: 1.5rem 1rem;
@@ -903,6 +908,7 @@ body main .contenedorLogos .derechos {
   body main .contenedorLogos ul li a.iconos {
     width: 60px;
     height: 60px;
+    text-decoration: none;
   }
   body main .contenedorLogos ul .fa-facebook, body main .contenedorLogos ul .fa-bus, body main .contenedorLogos ul .fa-whatsapp,
   body main .contenedorLogos ul .fa-envelope, body main .contenedorLogos ul .fa-instagram {
