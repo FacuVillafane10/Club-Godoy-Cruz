@@ -1,15 +1,8 @@
-@use "./variables" as *;
-
 // Mixin para Flexbox
 @mixin flexbox($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
-}
-@mixin separador($gap: 20px, $padding: 0px 150px, $paddingTop: 50px) {
-  gap: 20px;
-  padding: 0px 150px;
-  padding-top: 50px;
 }
 
 main {
@@ -18,7 +11,7 @@ main {
     padding: 40px 20px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #0066cc;
+    color: #0066cc; // Azul Godoy Cruz
   }
 
   .subtitulo {
@@ -31,67 +24,28 @@ main {
 
   .contenedorTienda {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    @include separador(20px, 0px 150px, 50px);
-    width: 100%;
+    grid-template-columns: repeat(4, 1fr);  // Se define un grid con 4 columnas
+    gap: 20px;  // Espaciado entre los productos
+    padding: 0px 150px;
+    padding-top: 50px;
 
-
-    @media (max-width: 3500px) {
-      grid-template-columns: repeat(8, 1fr);
-      @include separador(20px, 0px 150px, 50px);
+    // Responsivo para pantallas pequeñas
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr); // 3 columnas para pantallas medianas
     }
 
-
-    @media (max-width: 1300px) {
-      grid-template-columns: repeat(4, 1fr);
-      @include separador(20px, 0px 150px, 50px);
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr); // 2 columnas para pantallas más pequeñas
     }
 
-    @media (max-width: 1100px) {
-      grid-template-columns: repeat(3, 1fr);
-      @include separador(20px, 0px 150px, 50px);
-    }
-
-    @media (max-width: 850px) {
-      grid-template-columns: repeat(2, 1fr);
-      display: grid;
-      justify-content: center;
-      @include separador(20px, 0px 150px, 50px);
-    }
-
-    @media (max-width: 582px) {
-      grid-template-columns: repeat(2, 1fr);
-      width: 100%;
-      display: grid;
-      justify-content: center;
-      @include separador(20px, 0px 150px, 50px);
-      h1.tituloTienda {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 470px) {
-      grid-template-columns: repeat(1, 1fr);
-      @include separador(20px, 0px 150px, 50px);
-      width: 100%;
-      display: grid;
-      justify-content: center;
-    }
-
-    @media (max-width: 310px) {
-      grid-template-columns: repeat(1, 1fr);
-      @include separador(20px, 0px 150px, 50px);
-      width: 100%;
-      display: grid;
-      justify-content: center;
-
-      h1.tituloTienda {
-        font-size: 0.2rem;
-      }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr; // 1 columna en pantallas muy pequeñas (como teléfonos)
     }
 
     .productos {
-      border: #000000 1px solid;
+      border: #000000 1px solid;  // Borde alrededor de los productos
+      padding: 10px;
+      background-color: #f9f9f9;  // Color de fondo de los productos
 
       .fotoTienda {
         max-width: 100%;
@@ -106,18 +60,24 @@ main {
         padding: 0px 20px;
         text-align: center;
       }
-    }
 
-    .botonAgregar {
-      
-      background-color: #0066cc;
-      color: #fff;
-      @include flexbox(center, center);
-      width: 100%;
-      border-radius: 0px 0px 10px 10px;
+      .botonAgregar {
+        background-color: #0066cc;  // Color de fondo del botón de agregar
+        color: white;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        
+        &:hover {
+          background-color: #004a99;  // Color de fondo al pasar el mouse
+        }
+      }
     }
   }
 
+  // Estilo para el carrito
   .carrito {
     padding-top: 45px;
     display: flex;
@@ -126,9 +86,6 @@ main {
     font-size: 30px;
 
     .compraCarrito {
-      position: sticky;
-      bottom: 20px;
-      right: 20px;
       background-color: #0066cc;
       color: white;
       padding: 15px 30px;
@@ -138,27 +95,37 @@ main {
       cursor: pointer;
       z-index: 1000;
 
-      .compraCarrito:hover {
+      &:hover {
         background-color: #4377aa;
       }
     }
   }
 
+  // Contenedor del botón flotante del carrito
   .contenedorBotonCantidad {
     @include flexbox(end, center);
-    padding-right: 20px;
-    padding-top: 20px;
     position: fixed; 
-    bottom: 30px;    
-    right: 15px;     
-    z-index: 1000;   
-    
+    bottom: 30px;
+    right: 15px;
+    z-index: 1000;
+
     button.botonCarrito {
-      background-color: #fff;
-      .botonCantidad {
-        font-size: 50px;
-        color: #0066cc;
-        font-size: 25px;
+      background-color: #0d6efd;  // Color azul para el botón
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;      
+      border: none;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+
+      .botonCantidad{
+        padding-right:3px ;
+      }
+
+      &:hover {
+        background-color: #004a99;  // Cambia el color al pasar el mouse
       }
     }
   }

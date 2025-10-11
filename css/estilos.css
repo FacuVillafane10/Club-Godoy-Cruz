@@ -643,83 +643,26 @@ main .contenedorTienda {
   gap: 20px;
   padding: 0px 150px;
   padding-top: 50px;
-  width: 100%;
 }
-@media (max-width: 3500px) {
-  main .contenedorTienda {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
-  }
-}
-@media (max-width: 1300px) {
-  main .contenedorTienda {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
-  }
-}
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   main .contenedorTienda {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   main .contenedorTienda {
     grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    justify-content: center;
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
   }
 }
-@media (max-width: 582px) {
+@media (max-width: 600px) {
   main .contenedorTienda {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
-  }
-  main .contenedorTienda h1.tituloTienda {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 470px) {
-  main .contenedorTienda {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
-    width: 100%;
-    display: grid;
-    justify-content: center;
-  }
-}
-@media (max-width: 310px) {
-  main .contenedorTienda {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    padding: 0px 150px;
-    padding-top: 50px;
-    width: 100%;
-    display: grid;
-    justify-content: center;
-  }
-  main .contenedorTienda h1.tituloTienda {
-    font-size: 0.2rem;
+    grid-template-columns: 1fr;
   }
 }
 main .contenedorTienda .productos {
   border: #000000 1px solid;
+  padding: 10px;
+  background-color: #f9f9f9;
 }
 main .contenedorTienda .productos .fotoTienda {
   max-width: 100%;
@@ -733,14 +676,17 @@ main .contenedorTienda .productos .descripcion-precio {
   padding: 0px 20px;
   text-align: center;
 }
-main .contenedorTienda .botonAgregar {
+main .contenedorTienda .productos .botonAgregar {
   background-color: #0066cc;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: white;
   width: 100%;
-  border-radius: 0px 0px 10px 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+main .contenedorTienda .productos .botonAgregar:hover {
+  background-color: #004a99;
 }
 main .carrito {
   padding-top: 45px;
@@ -750,9 +696,6 @@ main .carrito {
   font-size: 30px;
 }
 main .carrito .compraCarrito {
-  position: sticky;
-  bottom: 20px;
-  right: 20px;
   background-color: #0066cc;
   color: white;
   padding: 15px 30px;
@@ -762,27 +705,34 @@ main .carrito .compraCarrito {
   cursor: pointer;
   z-index: 1000;
 }
-main .carrito .compraCarrito .compraCarrito:hover {
+main .carrito .compraCarrito:hover {
   background-color: #4377aa;
 }
 main .contenedorBotonCantidad {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding-right: 20px;
-  padding-top: 20px;
   position: fixed;
   bottom: 30px;
   right: 15px;
   z-index: 1000;
 }
 main .contenedorBotonCantidad button.botonCarrito {
-  background-color: #fff;
+  background-color: #0d6efd;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 main .contenedorBotonCantidad button.botonCarrito .botonCantidad {
-  font-size: 50px;
-  color: #0066cc;
-  font-size: 25px;
+  padding-right: 3px;
+}
+main .contenedorBotonCantidad button.botonCarrito:hover {
+  background-color: #004a99;
 }
 
 /*# sourceMappingURL=estilos.css.map */
