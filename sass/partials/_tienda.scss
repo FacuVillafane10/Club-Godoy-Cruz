@@ -6,7 +6,7 @@
   justify-content: $justify;
   align-items: $align;
 }
-@mixin separador($gap:20px,$padding:0px 150px,$paddingTop:50px){
+@mixin separador($gap: 20px, $padding: 0px 150px, $paddingTop: 50px) {
   gap: 20px;
   padding: 0px 150px;
   padding-top: 50px;
@@ -18,7 +18,7 @@ main {
     padding: 40px 20px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #0066cc; 
+    color: #0066cc;
   }
 
   .subtitulo {
@@ -29,131 +29,137 @@ main {
     color: #000000;
   }
 
- .contenedorTienda {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
- @include separador(20px,0px 150px ,50px);
-
-  
-  @media (max-width: 1200px) {
+  .contenedorTienda {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    @include separador(20px,0px 150px ,50px);
-  }
-
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
-    @include separador(20px,0px 150px ,50px);
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(3,1fr);  
-    display: grid;
-    justify-content: center;  
- @include separador(20px,0px 150px ,50px);
-  }
-
-  @media (max-width: 582px) {
-    grid-template-columns: repeat(2,1fr);
+    @include separador(20px, 0px 150px, 50px);
     width: 100%;
-    display: grid;
-    justify-content: center;
- @include separador(20px,0px 150px ,50px);
- h1.tituloTienda{
-    font-size: 1rem;
- }
-  }
-
-   @media (max-width: 435px) {
-  grid-template-columns: repeat(2, 1fr);
-  @include separador(20px, 0px 150px, 50px);
-  width: 100%;
-    display: grid;
-    justify-content: center;
-  
- 
-}
-
-  @media (max-width: 310px) {
-    grid-template-columns: repeat(1,1fr);
- @include separador(20px,0px 150px ,50px);
- width: 100%;
-    display: grid;
-    justify-content: center;
-    
-    h1.tituloTienda{
-    font-size: 0.2rem;
-    }  
-  }
 
 
+    @media (max-width: 3500px) {
+      grid-template-columns: repeat(8, 1fr);
+      @include separador(20px, 0px 150px, 50px);
+    }
 
-  .productos {
-    border: #000000 1px solid;
-    
+
+    @media (max-width: 1300px) {
+      grid-template-columns: repeat(4, 1fr);
+      @include separador(20px, 0px 150px, 50px);
+    }
+
+    @media (max-width: 1100px) {
+      grid-template-columns: repeat(3, 1fr);
+      @include separador(20px, 0px 150px, 50px);
+    }
+
+    @media (max-width: 850px) {
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      justify-content: center;
+      @include separador(20px, 0px 150px, 50px);
+    }
+
+    @media (max-width: 582px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      @include separador(20px, 0px 150px, 50px);
+      h1.tituloTienda {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 470px) {
+      grid-template-columns: repeat(1, 1fr);
+      @include separador(20px, 0px 150px, 50px);
+      width: 100%;
+      display: grid;
+      justify-content: center;
+    }
+
+    @media (max-width: 310px) {
+      grid-template-columns: repeat(1, 1fr);
+      @include separador(20px, 0px 150px, 50px);
+      width: 100%;
+      display: grid;
+      justify-content: center;
+
+      h1.tituloTienda {
+        font-size: 0.2rem;
+      }
+    }
+
+    .productos {
+      border: #000000 1px solid;
 
       .fotoTienda {
-    max-width: 100%;
-    max-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .descripcion-precio {
+        text-decoration: none;
+        padding: 0px 20px;
+        text-align: center;
+      }
+    }
+
+    .botonAgregar {
+      
+      background-color: #0066cc;
+      color: #fff;
+      @include flexbox(center, center);
+      width: 100%;
+      border-radius: 0px 0px 10px 10px;
+    }
   }
 
-  .descripcion-precio {
-    text-decoration: none;
-    padding: 0px 20px;
-    text-align: center;
-  }
-  }
-
-  
-
-  .botonAgregar {
-    text-align: center;
-    background-color: #0066cc;
-    color: #fff;
-  }
-}
-
-
-  .carrito{
+  .carrito {
     padding-top: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
 
-    .compraCarrito{
-     position: sticky;
-        bottom: 20px;
-        right: 20px;
-        background-color: #0066cc;
-        color: white;
-        padding: 15px 30px;
-        border-radius: 50px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-size: 1.2rem;
-        cursor: pointer;
-        z-index: 1000;
+    .compraCarrito {
+      position: sticky;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0066cc;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 1000;
 
-        .compraCarrito:hover {
-        background-color: #004d99;
+      .compraCarrito:hover {
+        background-color: #4377aa;
       }
     }
   }
 
-
-  .contenedorBotonCantidad{
+  .contenedorBotonCantidad {
     @include flexbox(end, center);
     padding-right: 20px;
     padding-top: 20px;
-    position: sticky;
-      .botonCantidad{
+    position: fixed; 
+    bottom: 30px;    
+    right: 15px;     
+    z-index: 1000;   
+    
+    button.botonCarrito {
+      background-color: #fff;
+      .botonCantidad {
         font-size: 50px;
-        color: #0066cc;   
+        color: #0066cc;
+        font-size: 25px;
       }
-  } 
-  
+    }
+  }
 }
-
-  

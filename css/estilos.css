@@ -643,8 +643,17 @@ main .contenedorTienda {
   gap: 20px;
   padding: 0px 150px;
   padding-top: 50px;
+  width: 100%;
 }
-@media (max-width: 1200px) {
+@media (max-width: 3500px) {
+  main .contenedorTienda {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
+    padding: 0px 150px;
+    padding-top: 50px;
+  }
+}
+@media (max-width: 1300px) {
   main .contenedorTienda {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -652,7 +661,7 @@ main .contenedorTienda {
     padding-top: 50px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   main .contenedorTienda {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -660,9 +669,9 @@ main .contenedorTienda {
     padding-top: 50px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   main .contenedorTienda {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     display: grid;
     justify-content: center;
     gap: 20px;
@@ -684,9 +693,9 @@ main .contenedorTienda {
     font-size: 1rem;
   }
 }
-@media (max-width: 435px) {
+@media (max-width: 470px) {
   main .contenedorTienda {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     padding: 0px 150px;
     padding-top: 50px;
@@ -725,9 +734,13 @@ main .contenedorTienda .productos .descripcion-precio {
   text-align: center;
 }
 main .contenedorTienda .botonAgregar {
-  text-align: center;
   background-color: #0066cc;
   color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 0px 0px 10px 10px;
 }
 main .carrito {
   padding-top: 45px;
@@ -750,7 +763,7 @@ main .carrito .compraCarrito {
   z-index: 1000;
 }
 main .carrito .compraCarrito .compraCarrito:hover {
-  background-color: #004d99;
+  background-color: #4377aa;
 }
 main .contenedorBotonCantidad {
   display: flex;
@@ -758,11 +771,18 @@ main .contenedorBotonCantidad {
   align-items: center;
   padding-right: 20px;
   padding-top: 20px;
-  position: sticky;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+  z-index: 1000;
 }
-main .contenedorBotonCantidad .botonCantidad {
+main .contenedorBotonCantidad button.botonCarrito {
+  background-color: #fff;
+}
+main .contenedorBotonCantidad button.botonCarrito .botonCantidad {
   font-size: 50px;
   color: #0066cc;
+  font-size: 25px;
 }
 
 /*# sourceMappingURL=estilos.css.map */
