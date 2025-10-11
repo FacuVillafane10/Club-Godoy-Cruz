@@ -81,3 +81,45 @@ botonesAgregar.forEach(boton => {
 
 // Inicializar el contador del carrito y el detalle de la compra al cargar la página
 actualizarContadorCarrito();
+
+function hizoClick() {
+  // Verificamos si el carrito está vacío
+  if (carrito.length === 0) {
+    // Si está vacío, mostramos el modal con un mensaje adecuado
+    const modalBody = document.querySelector('#exampleModal .modal-body'); // Seleccionamos el contenido del modal correctamente
+    modalBody.innerHTML = `<p>El carrito está vacío.</p>`;
+    
+    // Abrimos el modal
+    const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+    modal.show();
+    return;
+  }
+
+  // Si el carrito tiene productos, mostramos los detalles en el modal
+  const modalBody = document.querySelector('#exampleModal .modal-body'); // Seleccionamos el contenido del modal
+  let productosDetalle = '';
+
+  // Crear el detalle de los productos y calcular el total
+  let total = 0;
+  carrito.forEach(producto => {
+    productosDetalle += `
+      <p>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}</p>
+    `;
+    total += producto.precio * producto.cantidad;
+  });
+
+  // Actualizar el contenido del modal con los productos y el total
+  modalBody.innerHTML = `
+    <h5>Detalle de la Compra</h5>
+    ${productosDetalle}
+    <p><strong>Total: $${total.toLocaleString()}</strong></p>
+  `;
+
+  // Abrir el modal
+  const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  modal.show();
+}
+
+// Seleccionamos el botón de carrito para agregar el evento de clic
+const verProductos = document.querySelector('.botonCantidad');
+verProductos.addEventListener('click', hizoClick);
