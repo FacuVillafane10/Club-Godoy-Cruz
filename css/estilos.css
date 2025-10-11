@@ -507,118 +507,6 @@ html body main .contenedorLogos .derechos {
     font-size: 30px;
   }
 }
-@media (min-width: 415px) and (max-width: 768px) {
-  .card {
-    width: 100% !important;
-  }
-  h1.TituloContacto {
-    font-size: 15px;
-  }
-  h2.redes {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 415px) and (max-width: 768px) {
-  h5.card-title {
-    font-size: 15px;
-  }
-}
-@media (min-width: 415px) and (max-width: 768px) {
-  h5.card-text {
-    font-size: 10px;
-  }
-}
-@media (min-width: 415px) and (min-width: 577px) {
-  .navbar-nav .nav-link {
-    padding: 12px 0;
-    font-size: 1.2rem;
-  }
-  form.d-flex {
-    padding-bottom: 2rem;
-  }
-  .copa {
-    width: 500px;
-  }
-  h1.TituloContacto {
-    font-size: 20px;
-  }
-}
-@media (min-width: 769px) {
-  .navbar-nav .nav-link {
-    padding: 5px 0;
-    font-size: 2.2rem;
-  }
-  form.d-flex {
-    padding-bottom: 2rem;
-  }
-}
-@media (max-width: 749px) {
-  div.contenedorLogos {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  img.copa {
-    width: 100%;
-  }
-  a.iconos {
-    height: 75px;
-    padding: 10px;
-  }
-}
-@media (max-width: 350px) {
-  main {
-    width: 100%;
-  }
-  h1.nombre-club {
-    font-size: 30px;
-    color: rgb(143, 0, 0);
-  }
-  h2.haceteSocio {
-    font-size: 25px;
-    color: #0d6efd;
-  }
-  img.copa {
-    height: 100%;
-  }
-  h1.contacto {
-    font-size: 50px;
-  }
-  h2.redes {
-    font-size: 30.5rem;
-  }
-  main.main-contacto {
-    height: 20px;
-  }
-  h3.balcarce {
-    font-size: 1.3rem;
-  }
-  img.logoPrincipal {
-    width: 100px;
-    height: auto;
-  }
-}
-@media (min-width: 576px) {
-  header.logoPrincipal {
-    width: 10px;
-  }
-}
-@media (min-width: 576px) {
-  .copaDiv {
-    height: 90px;
-  }
-}
-@media (min-width: 361px) {
-  h1.nombre-club {
-    font-size: 2px;
-  }
-}
-@media (max-width: 665px) {
-  .contenedorLogos {
-    display: flex;
-    flex-direction: column;
-  }
-}
 main .tituloTienda {
   display: flex;
   justify-content: center;
@@ -641,40 +529,32 @@ main .contenedorTienda {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 0px 150px;
-  padding-top: 50px;
-}
-@media (max-width: 1200px) {
-  main .contenedorTienda {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (max-width: 900px) {
-  main .contenedorTienda {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  main .contenedorTienda {
-    grid-template-columns: 1fr;
-  }
+  padding: 50px 150px;
 }
 main .contenedorTienda .productos {
-  border: #000000 1px solid;
+  border: 1px solid #000;
   padding: 10px;
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 main .contenedorTienda .productos .fotoTienda {
-  max-width: 100%;
-  max-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
 }
 main .contenedorTienda .productos .descripcion-precio {
-  text-decoration: none;
-  padding: 0px 20px;
   text-align: center;
+  margin-bottom: 10px;
+}
+main .contenedorTienda .productos .nombreProducto {
+  font-weight: bold;
+}
+main .contenedorTienda .productos .precioProducto {
+  color: #0066cc;
 }
 main .contenedorTienda .productos .botonAgregar {
   background-color: #0066cc;
@@ -684,6 +564,7 @@ main .contenedorTienda .productos .botonAgregar {
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 main .contenedorTienda .productos .botonAgregar:hover {
   background-color: #004a99;
@@ -703,7 +584,6 @@ main .carrito .compraCarrito {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-size: 1.2rem;
   cursor: pointer;
-  z-index: 1000;
 }
 main .carrito .compraCarrito:hover {
   background-color: #4377aa;
@@ -728,26 +608,314 @@ main .contenedorBotonCantidad button.botonCarrito {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-main .contenedorBotonCantidad button.botonCarrito .botonCantidad {
-  padding-right: 3px;
+main .contenedorBotonCantidad button.botonCarrito:hover {
+  background-color: #000000;
+}
+main .detalleCompra {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+main .detalleCompra h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0066cc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+main .detalleCompra .listaCompra {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+main .detalleCompra .listaCompra li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #000;
+}
+main .detalleCompra .listaCompra li .productoNombre {
+  font-weight: bold;
+}
+main .detalleCompra .listaCompra li .productoPrecio {
+  color: #0066cc;
+}
+main .detalleCompra .totalCompra {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: right;
+  color: #0066cc;
+}
+
+.navbar-nav .nav-link {
+  padding: 12px 0;
+  font-size: 1.2rem;
+}
+
+form.d-flex {
+  padding-bottom: 2rem;
+}
+
+.contenedorLogos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contenedorLogos img.copa {
+  max-width: 100%;
+  height: auto;
+}
+.contenedorLogos a.iconos {
+  height: 75px;
+  padding: 10px;
+}
+
+@media (max-width: 600px) {
+  .contenedorTienda {
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+    gap: 20px;
+  }
+  .contenedorTienda .productos {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .contenedorTienda .fotoTienda {
+    max-width: 100%;
+    height: auto;
+  }
+  .contenedorTienda .descripcion-precio {
+    font-size: 0.9rem;
+  }
+  .contenedorTienda .botonAgregar {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .detalleCompra {
+    max-width: 100%;
+  }
+  .detalleCompra h3 {
+    font-size: 1.2rem;
+  }
+  .detalleCompra .listaCompra li {
+    font-size: 0.9rem;
+  }
+  .detalleCompra .totalCompra {
+    font-size: 1.1rem;
+  }
+  .contenedorLogos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .contenedorTienda {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px 30px;
+  }
+}
+@media (min-width: 901px) {
+  .contenedorTienda {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px 150px;
+  }
+}
+main .tituloTienda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #0066cc;
+}
+main .subtitulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color: #000000;
+}
+main .contenedorTienda {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 50px 150px;
+}
+main .contenedorTienda .productos {
+  border: #000000 1px solid;
+  padding: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .contenedorTienda .productos .fotoTienda {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+main .contenedorTienda .productos .descripcion-precio {
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .contenedorTienda .productos .nombreProducto {
+  font-weight: bold;
+}
+main .contenedorTienda .productos .precioProducto {
+  color: #0066cc;
+}
+main .contenedorTienda .productos .botonAgregar {
+  background-color: #0066cc;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main .contenedorTienda .productos .botonAgregar:hover {
+  background-color: #004a99;
+}
+@media (max-width: 1200px) {
+  main .contenedorTienda {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 50px;
+  }
+}
+@media (max-width: 900px) {
+  main .contenedorTienda {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px 30px;
+  }
+}
+@media (max-width: 600px) {
+  main .contenedorTienda {
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+  }
+  main .contenedorTienda .productos {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  main .contenedorTienda .fotoTienda {
+    max-width: 100%;
+    height: auto;
+  }
+  main .contenedorTienda .descripcion-precio {
+    font-size: 0.9rem;
+  }
+  main .contenedorTienda .botonAgregar {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+main .carrito {
+  padding-top: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+main .carrito .compraCarrito {
+  background-color: #0066cc;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+main .carrito .compraCarrito:hover {
+  background-color: #4377aa;
+}
+main .contenedorBotonCantidad {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;
+  right: 15px;
+  z-index: 1000;
+}
+main .contenedorBotonCantidad button.botonCarrito {
+  background-color: #0d6efd;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 main .contenedorBotonCantidad button.botonCarrito:hover {
   background-color: #000000;
 }
-main .dl, main ol, main ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+main .detalleCompra {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
 }
-main .dl .listaCompra, main ol .listaCompra, main ul .listaCompra {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #000000;
-  width: 300px;
+main .detalleCompra h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0066cc;
+  margin-bottom: 20px;
   text-align: center;
+}
+main .detalleCompra .listaCompra {
   list-style: none;
-  font-size: 50px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+main .detalleCompra .listaCompra li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #000;
+}
+main .detalleCompra .listaCompra li .productoNombre {
+  font-weight: bold;
+}
+main .detalleCompra .listaCompra li .productoPrecio {
+  color: #0066cc;
+}
+main .detalleCompra .totalCompra {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: right;
+  color: #0066cc;
+}
+@media (max-width: 600px) {
+  main .detalleCompra {
+    max-width: 100%;
+  }
+  main .detalleCompra h3 {
+    font-size: 1.2rem;
+  }
+  main .detalleCompra .listaCompra li {
+    font-size: 0.9rem;
+  }
+  main .detalleCompra .totalCompra {
+    font-size: 1.1rem;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */
