@@ -1,267 +1,543 @@
 @use './variables' as *;
+@use 'sass:color';
 
 // Mixin para Flexbox
-@mixin flexbox($justify: center, $align: center) {
+@mixin flexbox($justify: center, $align: center, $direction: row) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
+  flex-direction: $direction;
+}
+
+// Mixin para transiciones
+@mixin transition($property: all, $duration: 0.3s) {
+  transition: $property $duration ease-in-out;
+}
+
+// Mixin para sombras
+@mixin box-shadow($x: 0, $y: 5px, $blur: 20px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
 }
 
 html {
-  body {
-    background-color: #ffffff;
-    
-    main {
-      .main-contacto {
-        @include flexbox(center, center);
-        min-height: 250px;
-        flex-direction: column;
-        padding: 100px 0px 0px 0px;
-        
-        .tituloContacto {
-          color: #000;
-          text-align: center;
-          margin-bottom: 20px;
-          font-size: 40px;
-        }
-        
-        .redes {
-          @include flexbox(center, center);
-          padding-top: 50px;
-          padding-bottom: 100px;
-          color: $Tomba;
-          font-size: 2.1rem;
-          text-align: center;
-        }
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+  font-family: 'Merriweather Sans', sans-serif;
+  
+  main {
+    // Sección principal de contacto
+    .main-contacto {
+      @include flexbox(center, center, column);
+      min-height: 300px;
+      padding: 4rem 2rem 2rem;
+      background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, $Tomba, transparent);
+        border-radius: 2px;
       }
       
-      .contenedorTextos {
-        ul {
-          list-style: none;
-          @include flexbox(center, center);
-          flex-wrap: wrap; 
-          padding: 0 45px; 
-          padding-bottom: 20px;
-          gap: 10px; 
+      .tituloContacto {
+        color: #000;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        animation: fadeInDown 0.8s ease-out;
+      }
+      
+      .redes {
+        @include flexbox(center, center);
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        color: $Tomba;
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        text-align: center;
+        font-weight: 600;
+        animation: fadeInUp 0.8s ease-out;
+      }
+    }
+    
+    // Contenedor de textos descriptivos
+    .contenedorTextos {
+      margin: 2rem 0;
+      
+      ul {
+        list-style: none;
+        @include flexbox(center, center);
+        flex-wrap: wrap;
+        padding: 0 2rem 1rem;
+        gap: 2rem;
+        
+        li {
+          color: #333;
+          padding: 0.8rem 2rem;
+          font-size: clamp(1.2rem, 2vw, 1.6rem);
+          text-align: center;
+          font-weight: 600;
+          background: white;
+          border-radius: 25px;
+          @include box-shadow(0, 3px, 10px, rgba(0, 102, 204, 0.15));
+          @include transition(all, 0.3s);
           
-          li {
-            color: #000000;
-            padding: 2px 35px;
-            font-size: 1.8rem;
-            text-align: center;
-            min-width: fit-content; 
+          &:hover {
+            transform: translateY(-5px);
+            @include box-shadow(0, 8px, 20px, rgba(0, 102, 204, 0.25));
+            color: $Tomba;
           }
         }
-        
-        .txt {
-          padding: 0px 10px;
-          padding-bottom: 100px;
-          color: #000000;
-        }
       }
       
-      .contenedorLogos {
-        display: flex;
-        flex-direction: column;
+      .txt {
+        padding: 0 2rem 3rem;
+        color: #333;
+        text-align: center;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+      }
+    }
+    
+    // Contenedor de logos y formulario
+    .contenedorLogos {
+      @include flexbox(center, center, column);
+      gap: 3rem;
+      padding: 2rem 0;
+      
+      // Grid de íconos sociales
+      ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 800px;
+        width: 100%;
         
-        ul {
-          list-style: none;
+        li {
           @include flexbox(center, center);
-          flex-wrap: wrap; 
-          gap: 20px; 
           
-          li {
-            a.iconos {
-              color: #fff;
-              text-decoration: none;
-              padding: 10px; 
-              font-size: 1.5rem;
-              @include flexbox(center, center);
-              transition: transform 0.3s ease; 
+          a.iconos {
+            @include flexbox(center, center);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            @include box-shadow(0, 5px, 20px, rgba(0, 0, 0, 0.1));
+            @include transition(all, 0.4s);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3));
+              transform: translateX(-100%);
+              @include transition(transform, 0.4s);
               
-              &:hover {
-                transform: scale(1.1);
+            }
+            
+            &:hover {
+              transform: translateY(-10px) rotate(5deg);
+              @include box-shadow(0, 15px, 35px, rgba(0, 0, 0, 0.2));
+              
+              &::before {
+                transform: translateX(100%);
               }
             }
+          }
+          
+          // Colores individuales de íconos
+          .fa-facebook {
+            color: #1877f2;
+            font-size: 45px;
+            @include transition(all, 0.3s);
             
-            .fa-facebook {
-              color: $Tomba;
-              font-size: 50px;
+            &:hover {
+              color: #145dbf;
+              transform: scale(1.1);
             }
+          }
+          
+          .fa-bus {
+            color: #c0392b;
+            font-size: 45px;
+            @include transition(all, 0.3s);
             
-            .fa-bus {
-              color: rgb(161, 48, 48);
-              font-size: 50px;
+            &:hover {
+              color: #922b21;
+              transform: scale(1.1);
             }
+          }
+          
+          .fa-whatsapp {
+            color: #25d366;
+            font-size: 45px;
+            @include transition(all, 0.3s);
             
-            .fa-whatsapp {
-              color: #0e8339;
-              font-size: 50px;
+            &:hover {
+              color: #1da851;
+              transform: scale(1.1);
             }
+          }
+          
+          .fa-envelope {
+            color: #ea4335;
+            font-size: 45px;
+            @include transition(all, 0.3s);
             
-            .fa-envelope {
-              color: #da0b0b;
-              font-size: 50px;
+            &:hover {
+              color: #c5392b;
+              transform: scale(1.1);
             }
+          }
+          
+          .fa-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 45px;
+            @include transition(all, 0.3s);
             
-            .fa-instagram {
-              color: #ad0cad;
-              font-size: 50px;
+            &:hover {
+              transform: scale(1.1);
             }
           }
         }
+      }
 
-        .formulario{
-          padding: 30px 30px; 
-          background-color: $Tomba;  
-          border-top:#000000 solid 2px;
-          border-bottom:#000000 solid 2px;
-
-          .formularioDentro{
-            width: 65%;
+      // Formulario mejorado
+      .formulario {
+        width: 100%;
+        max-width: 600px;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, $Tomba 0%, color.adjust($Tomba, $lightness: -10%) 100%);
+        border-radius: 20px;
+        @include box-shadow(0, 10px, 40px, rgba(0, 102, 204, 0.3));
+        border: none;
+        margin: 2rem auto;
+        
+        .formularioDentro {
+          width: 100%;
+          max-width: 500px;
+          padding: 1rem;
+          border-radius: 10px;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.95);
+          @include transition(all, 0.3s);
+          
+          &:focus {
+            border-color: white;
+            @include box-shadow(0, 0, 20px, rgba(255, 255, 255, 0.5));
+            outline: none;
           }
-
-          .form-label{
-            font-size: 2.8rem;
-          }
-          .form-check-label{
-            font-size: 2rem;
-          }
-          .check{
-            border: solid 1px #000 ;
-          }
-        }
-
-        .contraseña{
-          gap: 10px;
         }
         
-        .derechos {
-          color: #000000;
-          @include flexbox(center, center);
-          padding-top: 150px;
-          text-align: center;
-          font-size: 1.9rem;
+        .form-label {
+          font-size: clamp(1.3rem, 2.5vw, 2rem);
+          color: white;
+          font-weight: 700;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          margin-bottom: 1rem;
         }
+        
+        .form-check-label {
+          font-size: clamp(1rem, 2vw, 1.3rem);
+          color: white;
+          font-weight: 500;
+        }
+        
+        .check {
+          width: 20px;
+          height: 20px;
+          border: 2px solid white;
+          cursor: pointer;
+          @include transition(all, 0.3s);
+          
+          &:checked {
+            background-color: white;
+            border-color: white;
+          }
+        }
+        
+        .btn-dark {
+          padding: 1rem 3rem;
+          font-size: 1.2rem;
+          font-weight: 700;
+          border-radius: 50px;
+          border: 2px solid white;
+          background: #000;
+          color: white;
+          @include transition(all, 0.3s);
+          margin-top: 1rem;
+          
+          &:hover {
+            background: white;
+            color: $Tomba;
+            transform: translateY(-3px);
+            @include box-shadow(0, 8px, 20px, rgba(0, 0, 0, 0.3));
+          }
+        }
+      }
+
+      .contraseña {
+        gap: 15px;
+        flex-direction: row !important;
+      }
+      
+      // Derechos de autor
+      .derechos {
+        color: #666;
+        @include flexbox(center, center);
+        padding: 3rem 2rem;
+        text-align: center;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+        font-weight: 400;
+        letter-spacing: 0.5px;
       }
     }
   }
 }
 
+// Modal personalizado
+.modal-content {
+  border-radius: 20px;
+  border: none;
+  @include box-shadow(0, 10px, 40px, rgba(0, 0, 0, 0.2));
+  overflow: hidden;
+  
+  .modal-header {
+    background: linear-gradient(135deg, $Tomba 0%, color.adjust($Tomba, $lightness: -10%) 100%);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    
+    .modal-title {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .btn-close {
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  .modal-body {
+    padding: 2rem;
+    
+    .alert {
+      border-radius: 15px;
+      border: none;
+      @include box-shadow(0, 5px, 15px, rgba(0, 0, 0, 0.1));
+      font-size: 1.1rem;
+    }
+  }
+  
+  .modal-footer {
+    border: none;
+    padding: 1.5rem;
+    
+    .btn-primary {
+      background: $Tomba;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      @include transition(all, 0.3s);
+      
+      &:hover {
+        background: color.adjust($Tomba, $lightness: -10%);
+        transform: translateY(-2px);
+        @include box-shadow(0, 5px, 15px, rgba(0, 102, 204, 0.3));
+      }
+    }
+  }
+}
 
+// Animaciones
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Media Queries optimizadas
 @media (max-width: 768px) {
   body main {
     .main-contacto {
-      padding: 50px 20px 0px 20px;
+      padding: 3rem 1.5rem 1.5rem;
+      min-height: 250px;
       
       .tituloContacto {
         font-size: 1.5rem;
-        color: $Tomba;
       }
       
       h2.redes {
-        font-size: 2.9rem;
-        color: $Tomba;
-        padding-top: 30px;
-        padding-bottom: 50px;
+        font-size: 1.3rem;
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
       }
     }
     
     .contenedorTextos ul {
-      padding: 0 20px;
-      flex-direction: column;
-      gap: 15px;
+      padding: 0 1rem;
+      gap: 1rem;
       
       li {
-        font-size: 1.4rem;
-        padding: 5px 20px;
+        font-size: 1.1rem;
+        padding: 0.6rem 1.5rem;
       }
     }
     
-    .contenedorLogos ul {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 20px;
-      padding: 0 20px;
+    .contenedorLogos {
+      padding: 1rem;
       
-      li a.iconos {
-        padding: 15px;
+      ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 1rem;
+        
+        li a.iconos {
+          width: 70px;
+          height: 70px;
+        }
+        
+        .fa-facebook, .fa-bus, .fa-whatsapp, 
+        .fa-envelope, .fa-instagram {
+          font-size: 35px;
+        }
       }
       
-      // Hacer íconos más pequeños en tablet
-      .fa-facebook, .fa-bus, .fa-whatsapp, 
-      .fa-envelope, .fa-instagram {
-        font-size: 40px;
+      .formulario {
+        padding: 2rem 1.5rem;
+        margin: 1.5rem 1rem;
       }
     }
   }
 }
 
-
 @media (max-width: 480px) {
   body main {
     .main-contacto {
-      padding: 30px 15px 0px 15px;
+      padding: 2rem 1rem;
       
       .tituloContacto {
         font-size: 1.2rem;
       }
       
       h2.redes {
-        font-size: 2.5rem;
-        padding-top: 20px;
-        padding-bottom: 30px;
+        font-size: 1.1rem;
       }
     }
     
     .contenedorTextos ul {
-      padding: 0 10px;
+      flex-direction: column;
+      padding: 0 1rem;
+      gap: 0.8rem;
       
       li {
-        font-size: 1.1rem;
-        padding: 3px 10px;
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+        width: 100%;
       }
     }
     
-    .contenedorLogos ul {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 15px;
-      padding: 0 10px;
-      
-      
-      li:last-child {
-        grid-column: 1 / -1;
-        justify-self: center;
+    .contenedorLogos {
+      ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+        
+        li:last-child {
+          grid-column: 1 / -1;
+        }
+        
+        li a.iconos {
+          width: 65px;
+          height: 65px;
+        }
+        
+        .fa-facebook, .fa-bus, .fa-whatsapp, 
+        .fa-envelope, .fa-instagram {
+          font-size: 32px;
+        }
       }
       
-      
-      .fa-facebook, .fa-bus, .fa-whatsapp, 
-      .fa-envelope, .fa-instagram {
-        font-size: 35px;
+      .formulario {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+        
+        .form-label {
+          font-size: 1.2rem;
+        }
+        
+        .form-check-label {
+          font-size: 1rem;
+        }
+        
+        .btn-dark {
+          padding: 0.8rem 2rem;
+          font-size: 1rem;
+        }
       }
-    }
-    
-    .derechos {
-      font-size: 0.8rem;
-      padding: 15px 10px;
+      
+      .derechos {
+        font-size: 0.9rem;
+        padding: 2rem 1rem;
+      }
     }
   }
 }
 
-
 @media (max-width: 320px) {
   body main {
     .contenedorTextos ul li {
-      font-size: 1rem;
-      padding: 2px 5px;
+      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
     }
     
     .contenedorLogos ul {
+      gap: 1rem;
+      
+      li a.iconos {
+        width: 60px;
+        height: 60px;
+      }
+      
       .fa-facebook, .fa-bus, .fa-whatsapp, 
       .fa-envelope, .fa-instagram {
-        font-size: 30px;
+        font-size: 28px;
       }
     }
   }

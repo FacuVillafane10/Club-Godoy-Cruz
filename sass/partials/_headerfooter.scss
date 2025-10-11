@@ -4,14 +4,14 @@
 
 
 
-// Mixin para Flexbox
+
 @mixin flexbox($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
 }
 
-// Clase base para cajas con fondo Tomba y padding
+
 .base-footer {
   padding: 10px;
   background-color: $Tomba;
@@ -61,7 +61,7 @@ html{
     @extend .base-footer;
     @include flexbox(center, center);
     background-size: 600px;
-    height: 180px;
+    height: 90px;
 
     .balcarce{
       color: #000;
