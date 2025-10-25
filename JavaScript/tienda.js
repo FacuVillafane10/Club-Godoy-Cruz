@@ -78,8 +78,8 @@ function hizoClick() {
     const modalFooter = document.querySelector("#exampleModal .modal-footer");
     const modalTitle = document.querySelector("#exampleModal .modal-title");
 
-    modalBody.innerHTML = `<p>El carrito está vacío.</p>`;    
-    modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`
+    modalBody.innerHTML = `<p>El carrito está vacío.</p>`;
+    modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`;
     // const botonConfirmar = modalFooter.querySelector("#confirmaCompraCarrito");
     // if (botonConfirmar) {
     //   botonConfirmar.remove();
@@ -101,10 +101,10 @@ function hizoClick() {
     `;
     total += producto.precio * producto.cantidad;
   });
-  
-    const modalTitle = document.querySelector("#realizaCompra .modal-title");    
-    modalTitle.innerHTML = `<p>Compra a Realizar</p>`
-    modalBody.innerHTML = `<h5>Detalle de la Compra</h5> ${productosDetalle}   <p><strong>Total: $${total.toLocaleString()}</strong></p>`;
+
+  const modalTitle = document.querySelector("#realizaCompra .modal-title");
+  modalTitle.innerHTML = `<p>Compra a Realizar</p>`;
+  modalBody.innerHTML = `<h5>Detalle de la Compra</h5> ${productosDetalle}   <p><strong>Total: $${total.toLocaleString()}</strong></p>`;
 
   const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
   modal.show();
@@ -113,9 +113,8 @@ function hizoClick() {
 const verProductos = document.querySelector(".botonCantidad");
 verProductos.addEventListener("click", hizoClick);
 
-
 const realizarCompra = document.querySelector(".compraCarrito");
-realizarCompra.addEventListener("click", realizarCompraCarrito); 
+realizarCompra.addEventListener("click", realizarCompraCarrito);
 function realizarCompraCarrito() {
   const botonCarrito = document.querySelector(".compraCarrito");
 
@@ -124,7 +123,7 @@ function realizarCompraCarrito() {
     const modalFooter = document.querySelector("#realizaCompra .modal-footer");
     const modalTitle = document.querySelector("#realizaCompra .modal-title");
     modalBody.innerHTML = `<p>No hay productos ingresados en el Carrito de Compras.</p>`;
-    modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`
+    modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`;
     // const botonConfirmar = modalFooter.querySelector("#confirmaCompra");
     // if (botonConfirmar) {
     //   botonConfirmar.remove();
@@ -134,7 +133,7 @@ function realizarCompraCarrito() {
     modal.show();
     return;
   } else {
-    const modalBody = document.querySelector("#realizaCompra .modal-body");        
+    const modalBody = document.querySelector("#realizaCompra .modal-body");
     // const botonConfirmar = modalFooter.querySelector("#confirmaCompra");
 
     let productosDetalle = "";
@@ -145,19 +144,19 @@ function realizarCompraCarrito() {
     // }
     carrito.forEach((producto) => {
       productosDetalle += `
-        <p>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}</p>
+        <p>${producto.nombre} x ${producto.cantidad} - $${(
+        producto.precio * producto.cantidad
+      ).toLocaleString()}</p>
       `;
       total += producto.precio * producto.cantidad;
     });
 
     const modalTitle = document.querySelector("#realizaCompra .modal-title");
-    
-    modalTitle.innerHTML = `<p>Compra a Realizar</p>`
+
+    modalTitle.innerHTML = `<p>Compra a Realizar</p>`;
     modalBody.innerHTML = `<h5>Detalle de la Compra</h5> ${productosDetalle} <p><strong>Total: $${total.toLocaleString()}</strong></p>`;
-        
+
     const modal = new bootstrap.Modal(document.getElementById("realizaCompra"));
     modal.show();
   }
 }
-
-
