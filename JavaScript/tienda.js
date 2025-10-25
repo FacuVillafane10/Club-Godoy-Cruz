@@ -80,7 +80,7 @@ function hizoClick() {
 
     modalBody.innerHTML = `<p>El carrito está vacío.</p>`;    
     modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`
-    const botonConfirmar = modalFooter.querySelector("#exampleModal");
+    const botonConfirmar = modalFooter.querySelector("#confirmaCompraCarrito");
     if (botonConfirmar) {
       botonConfirmar.remove();
     }
