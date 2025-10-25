@@ -80,10 +80,10 @@ function hizoClick() {
 
     modalBody.innerHTML = `<p>El carrito está vacío.</p>`;    
     modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`
-    const botonConfirmar = modalFooter.querySelector("#confirmaCompraCarrito");
-    if (botonConfirmar) {
-      botonConfirmar.remove();
-    }
+    // const botonConfirmar = modalFooter.querySelector("#confirmaCompraCarrito");
+    // if (botonConfirmar) {
+    //   botonConfirmar.remove();
+    // }
     const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
     modal.show();
     return;
@@ -125,20 +125,24 @@ function realizarCompraCarrito() {
     const modalTitle = document.querySelector("#realizaCompra .modal-title");
     modalBody.innerHTML = `<p>No hay productos ingresados en el Carrito de Compras.</p>`;
     modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`
-    const botonConfirmar = modalFooter.querySelector("#confirmaCompra");
-    if (botonConfirmar) {
-      botonConfirmar.remove();
-    }
+    // const botonConfirmar = modalFooter.querySelector("#confirmaCompra");
+    // if (botonConfirmar) {
+    //   botonConfirmar.remove();
+    // }
 
-    // Mostrar el modal
     const modal = new bootstrap.Modal(document.getElementById("realizaCompra"));
     modal.show();
     return;
   } else {
-    const modalBody = document.querySelector("#realizaCompra .modal-body");
+    const modalBody = document.querySelector("#realizaCompra .modal-body");        
+    // const botonConfirmar = modalFooter.querySelector("#confirmaCompra");
+
     let productosDetalle = "";
 
     let total = 0;
+    // if (botonConfirmar) {
+    //   botonConfirmar.push();
+    // }
     carrito.forEach((producto) => {
       productosDetalle += `
         <p>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}</p>
@@ -150,8 +154,7 @@ function realizarCompraCarrito() {
     
     modalTitle.innerHTML = `<p>Compra a Realizar</p>`
     modalBody.innerHTML = `<h5>Detalle de la Compra</h5> ${productosDetalle} <p><strong>Total: $${total.toLocaleString()}</strong></p>`;
-    
-    // Abrir el modal
+        
     const modal = new bootstrap.Modal(document.getElementById("realizaCompra"));
     modal.show();
   }
