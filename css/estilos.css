@@ -831,8 +831,11 @@ body main .contenedorLogos .derechos {
     height: 70px;
     text-decoration: none;
   }
-  body main .contenedorLogos ul .fa-facebook, body main .contenedorLogos ul .fa-bus, body main .contenedorLogos ul .fa-whatsapp,
-  body main .contenedorLogos ul .fa-envelope, body main .contenedorLogos ul .fa-instagram {
+  body main .contenedorLogos ul .fa-facebook,
+  body main .contenedorLogos ul .fa-bus,
+  body main .contenedorLogos ul .fa-whatsapp,
+  body main .contenedorLogos ul .fa-envelope,
+  body main .contenedorLogos ul .fa-instagram {
     font-size: 35px;
     text-decoration: none;
   }
@@ -873,8 +876,11 @@ body main .contenedorLogos .derechos {
     height: 65px;
     text-decoration: none;
   }
-  body main .contenedorLogos ul .fa-facebook, body main .contenedorLogos ul .fa-bus, body main .contenedorLogos ul .fa-whatsapp,
-  body main .contenedorLogos ul .fa-envelope, body main .contenedorLogos ul .fa-instagram {
+  body main .contenedorLogos ul .fa-facebook,
+  body main .contenedorLogos ul .fa-bus,
+  body main .contenedorLogos ul .fa-whatsapp,
+  body main .contenedorLogos ul .fa-envelope,
+  body main .contenedorLogos ul .fa-instagram {
     font-size: 32px;
     text-decoration: none;
   }
@@ -910,8 +916,11 @@ body main .contenedorLogos .derechos {
     height: 60px;
     text-decoration: none;
   }
-  body main .contenedorLogos ul .fa-facebook, body main .contenedorLogos ul .fa-bus, body main .contenedorLogos ul .fa-whatsapp,
-  body main .contenedorLogos ul .fa-envelope, body main .contenedorLogos ul .fa-instagram {
+  body main .contenedorLogos ul .fa-facebook,
+  body main .contenedorLogos ul .fa-bus,
+  body main .contenedorLogos ul .fa-whatsapp,
+  body main .contenedorLogos ul .fa-envelope,
+  body main .contenedorLogos ul .fa-instagram {
     font-size: 28px;
   }
 }
@@ -1257,6 +1266,7 @@ main .contenedorBotonCantidad {
   bottom: 30px;
   right: 15px;
   z-index: 1000;
+  gap: 3px;
 }
 main .contenedorBotonCantidad button.botonCarrito {
   background-color: #0d6efd;
@@ -1270,6 +1280,20 @@ main .contenedorBotonCantidad button.botonCarrito {
   cursor: pointer;
 }
 main .contenedorBotonCantidad button.botonCarrito:hover {
+  background-color: #000000;
+}
+main .contenedorBotonCantidad button.vaciarCarrito {
+  background-color: #0d6efd;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+main .contenedorBotonCantidad button.vaciarCarrito:hover {
   background-color: #000000;
 }
 main .detalleCompra {

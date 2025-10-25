@@ -23,8 +23,8 @@ function agregarProductoAlCarrito(productoId, nombre, precio) {
   } else {
     carrito.push({
       id: productoId,
-       nombre,
-       precio,
+      nombre,
+      precio,
       cantidad: 1,
     });
   }
@@ -40,25 +40,31 @@ function actualizarDetalleCompra() {
 
   // Verificar si los elementos existen en el DOM antes de intentar acceder a ellos
   if (!listaCompra || !totalPrecio) {
-    console.error("No se encontraron los elementos necesarios para actualizar el carrito.");
-    return;  // Sale de la función si los elementos no existen
+    console.error(
+      "No se encontraron los elementos necesarios para actualizar el carrito."
+    );
+    return; // Sale de la función si los elementos no existen
   }
 
-  listaCompra.innerHTML = "";  // Limpiar la lista de productos
+  listaCompra.innerHTML = ""; // Limpiar la lista de productos
 
   let total = 0;
 
   carrito.forEach((producto) => {
     const li = document.createElement("li");
     li.innerHTML = `
-      <span class="productoNombre">${producto.nombre} x ${producto.cantidad}</span>
-      <span class="productoPrecio">$${(producto.precio * producto.cantidad).toLocaleString()}</span>
+      <span class="productoNombre">${producto.nombre} x ${
+      producto.cantidad
+    }</span>
+      <span class="productoPrecio">$${(
+        producto.precio * producto.cantidad
+      ).toLocaleString()}</span>
     `;
     listaCompra.appendChild(li);
     total += producto.precio * producto.cantidad;
   });
 
-  totalPrecio.textContent = total.toLocaleString();  // Actualiza el precio total
+  totalPrecio.textContent = total.toLocaleString(); // Actualiza el precio total
 }
 
 const botonesAgregar = document.querySelectorAll(".botonAgregar");
@@ -98,13 +104,15 @@ function mostrarModalVacio() {
 function mostrarModalCarrito() {
   const modalBody = document.querySelector("#exampleModal .modal-body");
   const modalTitle = document.querySelector("#exampleModal .modal-title");
-  
+
   let productosDetalle = "";
   let total = 0;
 
   carrito.forEach((producto) => {
     productosDetalle += `
-      <p>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}</p>
+      <p>${producto.nombre} x ${producto.cantidad} - $${(
+      producto.precio * producto.cantidad
+    ).toLocaleString()}</p>
     `;
     total += producto.precio * producto.cantidad;
   });
@@ -139,7 +147,9 @@ function confirmarCompra() {
 
   carrito.forEach((producto) => {
     productosDetalle += `
-      <p>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}</p>
+      <p>${producto.nombre} x ${producto.cantidad} - $${(
+      producto.precio * producto.cantidad
+    ).toLocaleString()}</p>
     `;
     total += producto.precio * producto.cantidad;
   });
@@ -155,14 +165,15 @@ function confirmarCompra() {
   // Vaciar el carrito después de la compra
   carrito = [];
   actualizarContadorCarrito();
-};
+}
 
 //local storadge para cuando actualizan la página, no perder la compra
+
+//guardarlo
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-
-
+//recurperar los datos
 function recuperarCarrito() {
   const carritoGuardado = localStorage.getItem("carrito");
   if (carritoGuardado) {
@@ -172,5 +183,18 @@ function recuperarCarrito() {
   actualizarDetalleCompra();
 }
 
-// Llamar a recuperarCarrito() cuando se carga la página
 document.addEventListener("DOMContentLoaded", recuperarCarrito);
+
+// vaciar el carrito de compras
+const vaciarCarritoButton = document.querySelector(".vaciarCarrito");
+
+if (vaciarCarritoButton) {
+  vaciarCarritoButton.addEventListener("click", () => {
+    carrito = [];
+
+    localStorage.removeItem("carrito");
+
+    actualizarContadorCarrito();
+    actualizarDetalleCompra();
+  });
+}
