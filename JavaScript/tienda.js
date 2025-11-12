@@ -1,8 +1,9 @@
 let carrito = [];
 
-// Actualiza el contador del carrito
 function actualizarContadorCarrito() {
-  const botonCarrito = document.querySelector(".botonCarrito .botonCantidad");
+
+try{
+    const botonCarrito = document.querySelector(".botonCarrito .botonCantidad");
 
   if (botonCarrito) {
     botonCarrito.textContent = carrito.reduce(
@@ -10,10 +11,15 @@ function actualizarContadorCarrito() {
       0
     );
   }
+
+  } catch (error) {    
+  console.error("Se ha producido un error al intentar actualiza contador del Carrito :", error.message);
+  }
 }
 
-// Agrega un producto al carrito
+
 function agregarProductoAlCarrito(productoId, nombre, precio) {
+  try{
   const productoExistente = carrito.find(
     (producto) => producto.id === productoId
   );
@@ -31,22 +37,25 @@ function agregarProductoAlCarrito(productoId, nombre, precio) {
 
   actualizarContadorCarrito();
   actualizarDetalleCompra();
+  } catch (error) {    
+  console.error("Se ha producido un error al intentar agregar un producto al Carrito :", error.message);
+  }
 }
 
-// Actualiza el detalle de la compra en el modal
+
 function actualizarDetalleCompra() {
   const listaCompra = document.querySelector(".listaCompra");
   const totalPrecio = document.getElementById("totalPrecio");
 
-  // Verificar si los elementos existen en el DOM antes de intentar acceder a ellos
+  
   if (!listaCompra || !totalPrecio) {
     console.error(
       "No se encontraron los elementos necesarios para actualizar el carrito."
     );
-    return; // Sale de la función si los elementos no existen
+    return; 
   }
 
-  listaCompra.innerHTML = ""; // Limpiar la lista de productos
+  listaCompra.innerHTML = ""; 
 
   let total = 0;
 
@@ -64,7 +73,7 @@ function actualizarDetalleCompra() {
     total += producto.precio * producto.cantidad;
   });
 
-  totalPrecio.textContent = total.toLocaleString(); // Actualiza el precio total
+  totalPrecio.textContent = total.toLocaleString(); 
 }
 
 const botonesAgregar = document.querySelectorAll(".botonAgregar");
@@ -75,12 +84,11 @@ botonesAgregar.forEach((boton) => {
     const nombre = producto.getAttribute("data-nombre");
     const precio = parseFloat(producto.getAttribute("data-precio"));
     agregarProductoAlCarrito(productoId, nombre, precio);
-    guardarCarrito(); // Guarda el carrito después de agregar un producto
+    guardarCarrito(); 
   });
 });
 
-// Muestra el contenido del carrito al hacer click en el botón del carrito
-const verProductos = document.querySelector(".botonCantidad");
+const verProductos = document.querySelector(".botonCarrito");
 verProductos.addEventListener("click", () => {
   if (carrito.length === 0) {
     mostrarModalVacio();
@@ -89,8 +97,8 @@ verProductos.addEventListener("click", () => {
   }
 });
 
-// Muestra un mensaje si el carrito está vacío
 function mostrarModalVacio() {
+  try {
   const modalBody = document.querySelector("#exampleModal .modal-body");
   const modalTitle = document.querySelector("#exampleModal .modal-title");
 
@@ -98,10 +106,14 @@ function mostrarModalVacio() {
   modalTitle.innerHTML = `<p>No se puede realizar la compra</p>`;
   const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
   modal.show();
+  } catch (error) {    
+  console.error("Se ha producido un error al intentar mostrar Modal vacío del Carrito :", error.message);
+  }
 }
 
-// Muestra los detalles del carrito en el modal
 function mostrarModalCarrito() {
+  try {
+    
   const modalBody = document.querySelector("#exampleModal .modal-body");
   const modalTitle = document.querySelector("#exampleModal .modal-title");
 
@@ -125,9 +137,12 @@ function mostrarModalCarrito() {
   `;
   const modal = new bootstrap.Modal(document.getElementById("exampleModal"));
   modal.show();
+
+  } catch (error) {    
+  console.error("Se ha producido un error al intentar mostrar Modal del Carrito :", error.message);
+  }
 }
 
-// Realiza la compra cuando se confirma
 const realizarCompra = document.querySelector(".compraCarrito");
 realizarCompra.addEventListener("click", () => {
   if (carrito.length === 0) {
@@ -137,8 +152,14 @@ realizarCompra.addEventListener("click", () => {
   }
 });
 
-// Confirmar compra en el modal
+
+
 function confirmarCompra() {
+
+  try {
+  
+
+
   const modalBody = document.querySelector("#realizaCompra .modal-body");
   const modalTitle = document.querySelector("#realizaCompra .modal-title");
 
@@ -146,46 +167,60 @@ function confirmarCompra() {
   let total = 0;
 
   carrito.forEach((producto) => {
-    productosDetalle += `
-      <p>${producto.nombre} x ${producto.cantidad} - $${(
-      producto.precio * producto.cantidad
-    ).toLocaleString()}</p>
+    productosDetalle += `  
+      <p>${producto.nombre} x ${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}</p>
     `;
     total += producto.precio * producto.cantidad;
   });
 
   modalTitle.innerHTML = `Compra Confirmada`;
-  modalBody.innerHTML = `
+  modalBody.innerHTML = ` 
     <h5>Detalle de la Compra</h5>
     ${productosDetalle}
     <p><strong>Total: $${total.toLocaleString()}</strong></p>
   `;
+
   const modal = new bootstrap.Modal(document.getElementById("realizaCompra"));
   modal.show();
-  // Vaciar el carrito después de la compra
-  carrito = [];
+
+  carrito = []; 
+
+  guardarCarrito()
   actualizarContadorCarrito();
+  actualizarDetalleCompra();
+
+
+  
+  } catch (error) {
+  console.error("Se ha producido un error al intentar Confirmar la Compra:", error.message);
+}
 }
 
-//local storadge para cuando actualizan la página, no perder la compra
 
-//guardarlo
+
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-//recurperar los datos
+
 function recuperarCarrito() {
+
+  try {
+    
   const carritoGuardado = localStorage.getItem("carrito");
   if (carritoGuardado) {
     carrito = JSON.parse(carritoGuardado);
   }
   actualizarContadorCarrito();
   actualizarDetalleCompra();
+  
+  } catch (error) {    
+  console.error("Se ha producido un error al intentar Recuperar el Carrito :", error.message);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", recuperarCarrito);
 
-// vaciar el carrito de compras
+
 const vaciarCarritoButton = document.querySelector(".vaciarCarrito");
 
 if (vaciarCarritoButton) {
@@ -196,5 +231,21 @@ if (vaciarCarritoButton) {
 
     actualizarContadorCarrito();
     actualizarDetalleCompra();
+  });
+}
+
+
+
+// Simulando una operación asincrónica, como un request a un servidor.
+function realizarOperacionAsincronica() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const exito = true; // Cambiar a false para simular un error
+      if (exito) {
+        resolve(); // Si todo va bien, resolvemos la promise
+      } else {
+        reject('Hubo un error al procesar la compra.'); // Si algo sale mal, rechazamos la promise
+      }
+    }, 2000); // Simula un proceso que tarda 2 segundos
   });
 }
