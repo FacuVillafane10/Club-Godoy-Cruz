@@ -1,22 +1,15 @@
 @use './variables' as *;
 
-
-
-
-
-
 @mixin flexbox($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
 }
 
-
 .base-footer {
   padding: 10px;
   background-color: $Tomba;
 }
-
 
 *{
   margin: 0;
@@ -32,8 +25,6 @@
 html{
   font-size: 64.5%;
 }
-
-
 
 .footerEscudo{
   padding-top: 100px;

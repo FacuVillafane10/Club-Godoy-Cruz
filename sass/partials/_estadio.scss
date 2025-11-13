@@ -1,43 +1,73 @@
-        @use './variables' as *;
+@use './variables' as *;  // Asegúrate de que la variable $Tomba esté definida en 'variables.scss'
 
-        // Mixin para Flexbox
-        @mixin flexbox($justify: center, $align: center) {
-          display: flex;
-          justify-content: $justify;
-          align-items: $align;
-        }
+// Mixin para Flexbox
+@mixin flexbox($justify: center, $align: center, $direction: row, $wrap: no-wrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
 
 main.main-estadio {
   background-image: url("../../fotos/imagenes/cesped.jpg");
   background-size: cover;
   background-position: center;
-  padding-top: 7rem;
+  background-attachment: fixed;  // Efecto de paralaje
+  padding-top: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
 
+  // Título principal con animación
   .titulo {
-    font-size: 50rem;
+    font-size: 8vw;  // Tamaño de fuente responsivo
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  // Sombra para mejorar la legibilidad
+    opacity: 0;  // Inicia invisible
+    animation: fadeIn 2s forwards;  // Animación de entrada
 
     &:hover {
       color: #096FCC;
-      transition: 1.9s;
+      transition: color 0.3s ease-in-out;  // Transición suave de color
+      transform: scale(1.05);  // Efecto de zoom en hover
+      transition: transform 0.3s ease-in-out;
     }
-  } 
+  }
 
+  // Animación para el fade-in
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);  // Empieza desde abajo
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Subtítulo
   h2 {
     color: #000;
     max-width: 1200px;
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: 1.3;
     text-align: center;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeIn 2s 0.5s forwards;  // Aparece con retraso
   }
-  
+
   iframe {
     width: 100%;
     border: 0;
     display: block;
     margin: 0 auto;
     max-width: 1400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards;  // Aparece después de otros elementos
   }
 
   .bannerEstadio {
@@ -49,6 +79,10 @@ main.main-estadio {
       max-width: 100%;
       height: auto;
       display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      animation: fadeIn 2s 1.5s forwards;  // Imágenes aparecen con retraso
     }
   }
 
@@ -66,14 +100,17 @@ main.main-estadio {
       max-width: 1400px;
       height: 50rem;
       @include flexbox(center, center);
+      border-radius: 10px;
     }
 
     iframe.elementor-background-video-embed {
       width: 100%;
       height: 100%;
+      border-radius: 10px;
     }
   }
 
+  // Párrafo con animación
   .parrafoEstadio {
     font-size: 1.5rem;
     color: $Tomba;
@@ -82,12 +119,29 @@ main.main-estadio {
     max-width: 1200px;
     margin: 2rem auto;
     line-height: 1.5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    animation: fadeIn 2s 2s forwards;  // Animación con retraso para el párrafo
   }
 
+  // Hover y sombra animada
+  .img-estadio:hover {
+    transform: scale(1.05);  // Efecto de zoom
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  // Sombra más fuerte en hover
+  }
+
+  iframe:hover {
+    transform: scale(1.05);  // Efecto de zoom en iframe
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  // Sombra más fuerte en hover
+  }
+
+  // Media Queries para mejor responsividad
   @media (max-width: 768px) {
-    h1 {
-      font-size: 3rem;
-      padding: 1.5rem;
+    .titulo {
+      font-size: 6rem;  // Ajuste del tamaño del título en pantallas medianas
     }
 
     .elementor-background-video-embed {
@@ -95,14 +149,18 @@ main.main-estadio {
     }
 
     .parrafoEstadio {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       padding: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
     }
   }
 
   @media (max-width: 480px) {
-    .main-estadio h1 {
-      font-size: 2.2rem;
+    .titulo {
+      font-size: 4rem;  // Ajuste para pantallas pequeñas
     }
 
     .elementor-background-video-embed {
@@ -110,9 +168,39 @@ main.main-estadio {
     }
 
     .parrafoEstadio {
-      font-size: 1rem;
-      padding: 0.75rem;
+      font-size: 1.5rem;
+      color: $Tomba;
+      background-color: white;
+      padding: 2rem 3rem;  // Agregamos padding horizontal para mejorar el espaciado
+      max-width: 1200px;  // Máximo ancho para que no se estire demasiado
+      margin: 2rem auto;  // Centramos el párrafo sy le damos margen superior e inferior
+      line-height: 1.5;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      animation: fadeIn 2s 2s forwards;  // Animación con retraso para el párrafo
+    }
+    
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  // Animación para elementos que aparecen al hacer scroll (opcional)
+  .fadeInOnScroll {
+    opacity: 0;
+    animation: fadeInOnScroll 1.5s forwards;
+  }
+
+  @keyframes fadeInOnScroll {
+    0% {
+      opacity: 0;
+      transform: translateY(30px); // Comienza desde abajo
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
-

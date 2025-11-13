@@ -234,18 +234,3 @@ if (vaciarCarritoButton) {
   });
 }
 
-
-
-// Simulando una operación asincrónica, como un request a un servidor.
-function realizarOperacionAsincronica() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const exito = true; // Cambiar a false para simular un error
-      if (exito) {
-        resolve(); // Si todo va bien, resolvemos la promise
-      } else {
-        reject('Hubo un error al procesar la compra.'); // Si algo sale mal, rechazamos la promise
-      }
-    }, 2000); // Simula un proceso que tarda 2 segundos
-  });
-}
